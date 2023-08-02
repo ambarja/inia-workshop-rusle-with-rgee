@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Mapeo de Erosión del Suelo a Nivel Nacional: Un Manual con la Metodología RUSLE y el Paquete rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br>"
+  author: "Antony Barja <br> Tesista de LABSAF"
+  date: "last-modified"
+  repo-url: https://github.com/edzer/sdsr/
+  sharing: [twitter, facebook]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - study_area.qmd
+    - methodology.qmd
+    - results.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+     light: flatly
+     dark: theme-dark.scss
+  pdf:
+    documentclass: scrreprt
+execute:
+  freeze: auto    
