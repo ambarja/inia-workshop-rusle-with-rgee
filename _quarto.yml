@@ -1,6 +1,5 @@
 project:
-  type: book
-  output-dir: docs
+  type: website
 
 book:
   title: "Mapeo de Erosión del Suelo a Nivel Nacional: Un Manual con la Metodología RUSLE y el Paquete rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br>"
