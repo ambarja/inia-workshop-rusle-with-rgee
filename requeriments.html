@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content=" Antony Barja  Revizado por: Ing.Carlos Carbajal  Afiliación: INIA-LABSAF">
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️</title>
+<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 1&nbsp; Aspectos generales e installación de software</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./requeriments.html" rel="next">
+<link href="./rgee-setup.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">!Bienvenid@s! 👋</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./requeriments.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -130,13 +164,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">!Bienvenid@s! 👋</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./requeriments.html" class="sidebar-item-text sidebar-link">
+  <a href="./requeriments.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></span></a>
   </div>
 </li>
@@ -180,7 +214,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#bienvenids" id="toc-bienvenids" class="nav-link active" data-scroll-target="#bienvenids">!Bienvenid@s! 👋</a></li>
+  <li><a href="#qué-es-r" id="toc-qué-es-r" class="nav-link active" data-scroll-target="#qué-es-r"><span class="header-section-number">1.1</span> ¿Qué es R?</a></li>
+  <li><a href="#qué-es-rtools" id="toc-qué-es-rtools" class="nav-link" data-scroll-target="#qué-es-rtools"><span class="header-section-number">1.2</span> ¿Qué es Rtools?</a></li>
+  <li><a href="#qué-es-rstudio" id="toc-qué-es-rstudio" class="nav-link" data-scroll-target="#qué-es-rstudio"><span class="header-section-number">1.3</span> ¿Qué es Rstudio?</a></li>
+  <li><a href="#instalación-de-r-rtools-y-rstudio" id="toc-instalación-de-r-rtools-y-rstudio" class="nav-link" data-scroll-target="#instalación-de-r-rtools-y-rstudio"><span class="header-section-number">1.4</span> Instalación de R, Rtools y Rstudio</a></li>
+  <li><a href="#cuál-es-el-concepto-de-un-paquete-en-r" id="toc-cuál-es-el-concepto-de-un-paquete-en-r" class="nav-link" data-scroll-target="#cuál-es-el-concepto-de-un-paquete-en-r"><span class="header-section-number">1.5</span> ¿Cuál es el concepto de un paquete en R?</a></li>
+  <li><a href="#instalación-de-paquetes-en-r" id="toc-instalación-de-paquetes-en-r" class="nav-link" data-scroll-target="#instalación-de-paquetes-en-r"><span class="header-section-number">1.6</span> Instalación de paquetes en R</a></li>
   </ul>
 </nav>
     </div>
@@ -189,21 +228,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">AUTOR</div>
-    <div class="quarto-title-meta-contents">
-             <p><i class="bi bi-person-fill"></i> Antony Barja<br>
-<i class="bi bi-person-check-fill"></i> Revizado por: Ing.Carlos Carbajal<br>
-<i class="bi bi-buildings-fill"></i> Afiliación: INIA-LABSAF </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">PUBLICADO</div>
@@ -224,12 +255,149 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="bienvenids" class="level1 unnumbered">
-<h1 class="unnumbered">!Bienvenid@s! 👋</h1>
-<hr>
-<p>Este manual lleva por título <em>“Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología RUSLE y rgee”</em>. <strong>El objetivo, de esta guía dar a conocer a los usuarios y nuevos usuarios un flujo de trabajo reproducible y replicable para cualquier área de estudio que desea estimar y analizar los patrones espaciales y temporales de la erosión de suelo</strong>.</p>
-<p>Bajo el conexto de la ciencia datos y el apogeo de la mineria de datos (<strong>big data</strong> o <strong>data mining</strong>), esta guía dará a conocer el fácil acceso y procesamientos automatico de datos geográficos (<strong>geocomputación o geografía computacional</strong>) que permitan su manipulación para el cálculo de la erosión del suelo sin tener la necesidad de contar con elevadas capacidades computacionales.</p>
-<p>Finalmente, para poder reproducir y replicar satisfactoriamente este manual se debe tener cierto acercamiento a cualquier lenguaje de programación orientado a objetos (<strong>R</strong>,<strong>python</strong>, <strong>JavaScript</strong>, <strong>etc</strong>), asimismo se dará ciertas requerimientos que deberá presentar tu laptop o pc para la instalación de software con el fin de cumplir los objetivos mostrados inicialmente, es necesario recalcar que todo los procesos que se darán a conocer en los próximos cápitulos serán desarrollado sólo bajo el lenguaje de programación de <strong>R</strong>.</p>
+<p>En está sección se mostrará los conceptos básicos del software R, Rtools y Rstudio como tambien la definición de los paquetes que se utilizara en el flujo de trabajo.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Atención:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para poder replicar y reproducir este manual sin ningun problema es necesario tener como mínimo las siguientes características computacionales:</p>
+<ul>
+<li>Memoria RAM : 4-8 GB</li>
+<li>Capacidad de almacenamiento: 255GB</li>
+<li>Procesador como mínimo: i7 con CPUde 2.40 GHz</li>
+</ul>
+</div>
+</div>
+<section id="qué-es-r" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="qué-es-r"><span class="header-section-number">1.1</span> ¿Qué es R?</h2>
+<p>Es un lenguaje de programación interpretado de código abierto multi-plataforma que permite hacer diferentes tipos de análisis estadísticos, desde importar datos, ordenarlos, modelar y visualizar mediante gráficos de alta calidad, e incluir en informes académicos de manera científica (<strong>Hadley Wickham y Garrett Grolemund,2017</strong> ).</p>
+<p><img src="https://ambarja.github.io/ceigaUNMSM/image/r_native.PNG" class="img-fluid"></p>
+<p><strong>Características:</strong></p>
+<ul>
+<li>Es un software libre y de código abierto.</li>
+<li>Corre en multiples sistemas operativos (GNU/Linux, MacOSX y Windows).</li>
+<li>Posee una variedad de paquetes para temás específicos.</li>
+<li>Comunidad científica muy dinámica.</li>
+</ul>
+</section>
+<section id="qué-es-rtools" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="qué-es-rtools"><span class="header-section-number">1.2</span> ¿Qué es Rtools?</h2>
+<p>Es una colección de herramientas necesarias en R para compilar y construir paquetes desde el código fuente en solo los sistemas operativos de <strong>Windows</strong>, si no se tiene instalado, no se podrían instalar ni utilizar muchos paquetes que requieren está compilación basadas en C o C++.</p>
+</section>
+<section id="qué-es-rstudio" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="qué-es-rstudio"><span class="header-section-number">1.3</span> ¿Qué es Rstudio?</h2>
+<p>Es un entorno de desarrollo integrado (IDE) para R. Incluye una consola, un editor de código, una consola, un gestor para la administración del espacio de trabajo, entre otros.</p>
+<p><mark>CONCLUSIÓN: “RSTUDIO ES EL ROSTRO BONITO DE R”</mark></p>
+<p><img src="https://ambarja.github.io/ceigaUNMSM/image/parts.PNG" class="img-fluid"></p>
+</section>
+<section id="instalación-de-r-rtools-y-rstudio" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="instalación-de-r-rtools-y-rstudio"><span class="header-section-number">1.4</span> Instalación de R, Rtools y Rstudio</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/h2IPWVXaUuU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="cuál-es-el-concepto-de-un-paquete-en-r" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="cuál-es-el-concepto-de-un-paquete-en-r"><span class="header-section-number">1.5</span> ¿Cuál es el concepto de un paquete en R?</h2>
+<p>Un paquete en R es una colección organizada de funciones, datos y documentación que se agrupa para resolver un conjunto particular de problemas (<strong>Hadley Wickham, 2021</strong>).</p>
+<p>Estos son los paquetes que se utilizará durante todo flujo de trabajo 👇</p>
+<div class="grid">
+<div class="g-col-12 g-col-md-4 col-lg-4">
+<style>
+    .card {background-color:#ffffff26;}
+</style>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title anchored">{tidyverse}</h5>
+    <div align="center"><img src="https://soka.gitlab.io/blog/post/2019-10-06-r-tidyverse-intro/images/hex-tidyverse.png" width="100px" align="center"></div>
+    <p class="card-text">Paquete que te permite hacer ciencia de datos.</p>
+    <a href="https://www.tidyverse.org/" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title anchored">{tidyterra}</h5>
+    <div align="center"><img src="https://dieghernan.github.io/tidyterra/logo.png" width="100px" align="center"></div>
+    <p class="card-text">Paquete que te permite manipular datos raster.</p>
+    <a href="https://dieghernan.github.io/tidyterra/articles/tidyterra.html" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title anchored">{cloudml}</h5>
+    <div align="center"><img src="https://raw.githubusercontent.com/rstudio/cloudml/main/vignettes/images/cloudml.png" width="115px" align="center"></div>
+    <p class="card-text">Paquete que te permite instalar y utilizar GCloud CLI.</p>
+    <a href="https://tensorflow.rstudio.com/reference/cloudml/" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title anchored">{rgee}</h5>
+    <div align="center"><img src="https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png" width="100px" align="center"></div>
+    <p class="card-text">Paquete que integrar Google Earth Engine con R.</p>
+    <a href="https://r-spatial.github.io/rgee/" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title anchored">{tmap}</h5>
+    <div align="center"><img src="https://user-images.githubusercontent.com/3457131/78889077-49661800-7a63-11ea-95b6-31db1ce6815c.png" width="100px" align="center"></div>
+    <p class="card-text">Paquete para generar mapas temáticos.</p>
+    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title anchored">{gifski}</h5>
+    <div align="center"><img src="https://user-images.githubusercontent.com/23284899/258276611-89116f95-dd02-45c4-9ee5-c6df413f1484.png" width="100px" align="center"></div>
+    <p class="card-text">Paquete que te permite realizar gif de forma sencilla.</p>
+    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="instalación-de-paquetes-en-r" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="instalación-de-paquetes-en-r"><span class="header-section-number">1.6</span> Instalación de paquetes en R</h2>
+<p>Una vez instalada los software de R y Rstudio procederemos a instalar y configurar todos los paquetes mencionados en la sección de <strong>requerimientos</strong>.</p>
+<p>Este proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de paquetes a instalar</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"tidyterra"</span>, <span class="st">"rgee"</span>, <span class="st">"tmap"</span>, <span class="st">"gifski"</span>, <span class="st">"cloudml"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(pkgs = pkgs, dependencies = TRUE)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para verificar que todo los paquetes fuerón instalados, corremos el siguiente script:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar la instalación de los paquetes</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pkg <span class="cf">in</span> pkgs) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(pkg, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">paste</span>(<span class="st">"El paquete"</span>, pkg, <span class="st">"no está instalado."</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">paste</span>(<span class="st">"El paquete"</span>, pkg, <span class="st">"está instalado y cargado correctamente."</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>El paquete tidyverse está instalado y cargado correctamente.
+El paquete tidyterra está instalado y cargado correctamente.
+El paquete rgee está instalado y cargado correctamente.
+El paquete tmap está instalado y cargado correctamente.
+El paquete gifski está instalado y cargado correctamente.
+El paquete cloudml está instalado y cargado correctamente</code></pre>
 
 
 </section>
@@ -585,10 +753,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">!Bienvenid@s! 👋</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./requeriments.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rgee-setup.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Configuración de rgee</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

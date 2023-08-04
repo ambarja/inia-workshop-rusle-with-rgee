@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content=" Antony Barja  Revizado por: Ing.Carlos Carbajal  Afiliación: INIA-LABSAF">
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️</title>
+<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 4&nbsp; RUSLE con rgee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./requeriments.html" rel="next">
+<link href="./results.html" rel="next">
+<link href="./methodology.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">!Bienvenid@s! 👋</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rusle_with_rgee.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">!Bienvenid@s! 👋</span></a>
   </div>
 </li>
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rusle_with_rgee.html" class="sidebar-item-text sidebar-link">
+  <a href="./rusle_with_rgee.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span></a>
   </div>
 </li>
@@ -176,34 +176,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
-   
-  <ul>
-  <li><a href="#bienvenids" id="toc-bienvenids" class="nav-link active" data-scroll-target="#bienvenids">!Bienvenid@s! 👋</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">AUTOR</div>
-    <div class="quarto-title-meta-contents">
-             <p><i class="bi bi-person-fill"></i> Antony Barja<br>
-<i class="bi bi-person-check-fill"></i> Revizado por: Ing.Carlos Carbajal<br>
-<i class="bi bi-buildings-fill"></i> Afiliación: INIA-LABSAF </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">PUBLICADO</div>
@@ -224,15 +210,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="bienvenids" class="level1 unnumbered">
-<h1 class="unnumbered">!Bienvenid@s! 👋</h1>
-<hr>
-<p>Este manual lleva por título <em>“Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología RUSLE y rgee”</em>. <strong>El objetivo, de esta guía dar a conocer a los usuarios y nuevos usuarios un flujo de trabajo reproducible y replicable para cualquier área de estudio que desea estimar y analizar los patrones espaciales y temporales de la erosión de suelo</strong>.</p>
-<p>Bajo el conexto de la ciencia datos y el apogeo de la mineria de datos (<strong>big data</strong> o <strong>data mining</strong>), esta guía dará a conocer el fácil acceso y procesamientos automatico de datos geográficos (<strong>geocomputación o geografía computacional</strong>) que permitan su manipulación para el cálculo de la erosión del suelo sin tener la necesidad de contar con elevadas capacidades computacionales.</p>
-<p>Finalmente, para poder reproducir y replicar satisfactoriamente este manual se debe tener cierto acercamiento a cualquier lenguaje de programación orientado a objetos (<strong>R</strong>,<strong>python</strong>, <strong>JavaScript</strong>, <strong>etc</strong>), asimismo se dará ciertas requerimientos que deberá presentar tu laptop o pc para la instalación de software con el fin de cumplir los objetivos mostrados inicialmente, es necesario recalcar que todo los procesos que se darán a conocer en los próximos cápitulos serán desarrollado sólo bajo el lenguaje de programación de <strong>R</strong>.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -585,10 +564,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./methodology.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./requeriments.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./results.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

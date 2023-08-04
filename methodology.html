@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y el paquete rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 3&nbsp; Metodología</title>
+<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 3&nbsp; Metodología</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./results.html" rel="next">
-<link href="./study_area.html" rel="prev">
+<link href="./rusle_with_rgee.html" rel="next">
+<link href="./rgee-setup.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y el paquete rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br></a> 
+      <a href="./">Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br></a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://ambarja.github.io/inia-workshop-rusle-with-rgee/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-git"></i></a>
     <div class="dropdown">
@@ -107,6 +107,12 @@ ul.task-list li input[type="checkbox"] {
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
               <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
             </a>
           </li>
       </ul>
@@ -125,19 +131,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">!Bienvenid@s!</span></a>
+ <span class="menu-text">!Bienvenid@s! 👋</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  <a href="./requeriments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_area.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Área de estudio</span></span></a>
+  <a href="./rgee-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Configuración de rgee</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,8 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./rusle_with_rgee.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,7 +176,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#factor-r" id="toc-factor-r" class="nav-link active" data-scroll-target="#factor-r"><span class="header-section-number">3.1</span> Factor R</a></li>
+  <li><a href="#factor-k" id="toc-factor-k" class="nav-link" data-scroll-target="#factor-k"><span class="header-section-number">3.2</span> Factor K</a></li>
+  <li><a href="#factor-ls" id="toc-factor-ls" class="nav-link" data-scroll-target="#factor-ls"><span class="header-section-number">3.3</span> Factor LS</a></li>
+  <li><a href="#factor-c" id="toc-factor-c" class="nav-link" data-scroll-target="#factor-c"><span class="header-section-number">3.4</span> Factor C</a></li>
+  <li><a href="#calculo-de-la-erosion" id="toc-calculo-de-la-erosion" class="nav-link" data-scroll-target="#calculo-de-la-erosion"><span class="header-section-number">3.5</span> Calculo de la Erosion</a></li>
+  <li><a href="#flujograma-de-trabajo" id="toc-flujograma-de-trabajo" class="nav-link" data-scroll-target="#flujograma-de-trabajo"><span class="header-section-number">3.6</span> Flujograma de trabajo</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -198,8 +221,27 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>¿Qué es RUSLE?</p>
+<section id="factor-r" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="factor-r"><span class="header-section-number">3.1</span> Factor R</h2>
+</section>
+<section id="factor-k" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="factor-k"><span class="header-section-number">3.2</span> Factor K</h2>
+</section>
+<section id="factor-ls" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="factor-ls"><span class="header-section-number">3.3</span> Factor LS</h2>
+</section>
+<section id="factor-c" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="factor-c"><span class="header-section-number">3.4</span> Factor C</h2>
+</section>
+<section id="calculo-de-la-erosion" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="calculo-de-la-erosion"><span class="header-section-number">3.5</span> Calculo de la Erosion</h2>
+</section>
+<section id="flujograma-de-trabajo" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="flujograma-de-trabajo"><span class="header-section-number">3.6</span> Flujograma de trabajo</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -552,13 +594,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./study_area.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Área de estudio</span></span>
+      <a href="./rgee-setup.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Configuración de rgee</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./results.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resultados</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rusle_with_rgee.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

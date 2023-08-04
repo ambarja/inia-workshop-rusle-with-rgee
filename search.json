@@ -2,29 +2,106 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y el paquete rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️",
+    "title": "Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️",
     "section": "",
-    "text": "!Bienvenid@s!\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "!Bienvenid@s! 👋\n\nEste manual lleva por título “Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología RUSLE y rgee”. El objetivo, de esta guía dar a conocer a los usuarios y nuevos usuarios un flujo de trabajo reproducible y replicable para cualquier área de estudio que desea estimar y analizar los patrones espaciales y temporales de la erosión de suelo.\nBajo el conexto de la ciencia datos y el apogeo de la mineria de datos (big data o data mining), esta guía dará a conocer el fácil acceso y procesamientos automatico de datos geográficos (geocomputación o geografía computacional) que permitan su manipulación para el cálculo de la erosión del suelo sin tener la necesidad de contar con elevadas capacidades computacionales.\nFinalmente, para poder reproducir y replicar satisfactoriamente este manual se debe tener cierto acercamiento a cualquier lenguaje de programación orientado a objetos (R,python, JavaScript, etc), asimismo se dará ciertas requerimientos que deberá presentar tu laptop o pc para la instalación de software con el fin de cumplir los objetivos mostrados inicialmente, es necesario recalcar que todo los procesos que se darán a conocer en los próximos cápitulos serán desarrollado sólo bajo el lenguaje de programación de R."
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introducción",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97-111. https://doi.org/10.1093/comjnl/27.2.97."
+    "objectID": "requeriments.html#qué-es-r",
+    "href": "requeriments.html#qué-es-r",
+    "title": "1  Aspectos generales e installación de software",
+    "section": "1.1 ¿Qué es R?",
+    "text": "1.1 ¿Qué es R?\nEs un lenguaje de programación interpretado de código abierto multi-plataforma que permite hacer diferentes tipos de análisis estadísticos, desde importar datos, ordenarlos, modelar y visualizar mediante gráficos de alta calidad, e incluir en informes académicos de manera científica (Hadley Wickham y Garrett Grolemund,2017 ).\n\nCaracterísticas:\n\nEs un software libre y de código abierto.\nCorre en multiples sistemas operativos (GNU/Linux, MacOSX y Windows).\nPosee una variedad de paquetes para temás específicos.\nComunidad científica muy dinámica."
   },
   {
-    "objectID": "study_area.html",
-    "href": "study_area.html",
-    "title": "2  Área de estudio",
-    "section": "",
-    "text": "El area de"
+    "objectID": "requeriments.html#qué-es-rtools",
+    "href": "requeriments.html#qué-es-rtools",
+    "title": "1  Aspectos generales e installación de software",
+    "section": "1.2 ¿Qué es Rtools?",
+    "text": "1.2 ¿Qué es Rtools?\nEs una colección de herramientas necesarias en R para compilar y construir paquetes desde el código fuente en solo los sistemas operativos de Windows, si no se tiene instalado, no se podrían instalar ni utilizar muchos paquetes que requieren está compilación basadas en C o C++."
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "Referencias",
+    "objectID": "requeriments.html#qué-es-rstudio",
+    "href": "requeriments.html#qué-es-rstudio",
+    "title": "1  Aspectos generales e installación de software",
+    "section": "1.3 ¿Qué es Rstudio?",
+    "text": "1.3 ¿Qué es Rstudio?\nEs un entorno de desarrollo integrado (IDE) para R. Incluye una consola, un editor de código, una consola, un gestor para la administración del espacio de trabajo, entre otros.\nCONCLUSIÓN: “RSTUDIO ES EL ROSTRO BONITO DE R”"
+  },
+  {
+    "objectID": "requeriments.html#instalación-de-r-rtools-y-rstudio",
+    "href": "requeriments.html#instalación-de-r-rtools-y-rstudio",
+    "title": "1  Aspectos generales e installación de software",
+    "section": "1.4 Instalación de R, Rtools y Rstudio",
+    "text": "1.4 Instalación de R, Rtools y Rstudio"
+  },
+  {
+    "objectID": "requeriments.html#cuál-es-el-concepto-de-un-paquete-en-r",
+    "href": "requeriments.html#cuál-es-el-concepto-de-un-paquete-en-r",
+    "title": "1  Aspectos generales e installación de software",
+    "section": "1.5 ¿Cuál es el concepto de un paquete en R?",
+    "text": "1.5 ¿Cuál es el concepto de un paquete en R?\nUn paquete en R es una colección organizada de funciones, datos y documentación que se agrupa para resolver un conjunto particular de problemas (Hadley Wickham, 2021).\nEstos son los paquetes que se utilizará durante todo flujo de trabajo 👇\n\n\n\n\n\n  \n    {tidyverse}\n    \n    Paquete que te permite hacer ciencia de datos.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {tidyterra}\n    \n    Paquete que te permite manipular datos raster.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {cloudml}\n    \n    Paquete que te permite instalar y utilizar GCloud CLI.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {rgee}\n    \n    Paquete que integrar Google Earth Engine con R.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {tmap}\n    \n    Paquete para generar mapas temáticos.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {gifski}\n    \n    Paquete que te permite realizar gif de forma sencilla.\n    Más información,clic aquí"
+  },
+  {
+    "objectID": "requeriments.html#instalación-de-paquetes-en-r",
+    "href": "requeriments.html#instalación-de-paquetes-en-r",
+    "title": "1  Aspectos generales e installación de software",
+    "section": "1.6 Instalación de paquetes en R",
+    "text": "1.6 Instalación de paquetes en R\nUna vez instalada los software de R y Rstudio procederemos a instalar y configurar todos los paquetes mencionados en la sección de requerimientos.\nEste proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.\n\n# Lista de paquetes a instalar\npkgs &lt;- c(\"tidyverse\", \"tidyterra\", \"rgee\", \"tmap\", \"gifski\", \"cloudml\")\n# install.packages(pkgs = pkgs, dependencies = TRUE)\n\nPara verificar que todo los paquetes fuerón instalados, corremos el siguiente script:\n\n# Verificar la instalación de los paquetes\nfor (pkg in pkgs) {\n  if (!requireNamespace(pkg, quietly = TRUE)) {\n    message(paste(\"El paquete\", pkg, \"no está instalado.\"))\n  } else {\n    message(paste(\"El paquete\", pkg, \"está instalado y cargado correctamente.\"))\n  }\n}\n\nEl paquete tidyverse está instalado y cargado correctamente.\nEl paquete tidyterra está instalado y cargado correctamente.\nEl paquete rgee está instalado y cargado correctamente.\nEl paquete tmap está instalado y cargado correctamente.\nEl paquete gifski está instalado y cargado correctamente.\nEl paquete cloudml está instalado y cargado correctamente"
+  },
+  {
+    "objectID": "rgee-setup.html",
+    "href": "rgee-setup.html",
+    "title": "2  Configuración de rgee",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "# Activación o llamado de los paquetes instalados\nlibrary(cloudml)\nlibrary(rgee)"
+  },
+  {
+    "objectID": "methodology.html#factor-r",
+    "href": "methodology.html#factor-r",
+    "title": "3  Metodología",
+    "section": "3.1 Factor R",
+    "text": "3.1 Factor R"
+  },
+  {
+    "objectID": "methodology.html#factor-k",
+    "href": "methodology.html#factor-k",
+    "title": "3  Metodología",
+    "section": "3.2 Factor K",
+    "text": "3.2 Factor K"
+  },
+  {
+    "objectID": "methodology.html#factor-ls",
+    "href": "methodology.html#factor-ls",
+    "title": "3  Metodología",
+    "section": "3.3 Factor LS",
+    "text": "3.3 Factor LS"
+  },
+  {
+    "objectID": "methodology.html#factor-c",
+    "href": "methodology.html#factor-c",
+    "title": "3  Metodología",
+    "section": "3.4 Factor C",
+    "text": "3.4 Factor C"
+  },
+  {
+    "objectID": "methodology.html#calculo-de-la-erosion",
+    "href": "methodology.html#calculo-de-la-erosion",
+    "title": "3  Metodología",
+    "section": "3.5 Calculo de la Erosion",
+    "text": "3.5 Calculo de la Erosion"
+  },
+  {
+    "objectID": "methodology.html#flujograma-de-trabajo",
+    "href": "methodology.html#flujograma-de-trabajo",
+    "title": "3  Metodología",
+    "section": "3.6 Flujograma de trabajo",
+    "text": "3.6 Flujograma de trabajo"
+  },
+  {
+    "objectID": "results.html",
+    "href": "results.html",
+    "title": "5  Resultados",
+    "section": "",
+    "text": "6 Graficos comparativos\n\n\n7 Mapas\n\n\n8 Animación"
   }
 ]
