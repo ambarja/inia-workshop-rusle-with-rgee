@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 3&nbsp; Metodología</title>
+<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 2&nbsp; Registro de usuario en la plataforma de Google Earth Engine</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./rusle_with_rgee.html" rel="next">
-<link href="./rgee-setup.html" rel="prev">
+<link href="./03_methodology.html" rel="next">
+<link href="./01_requeriments.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./methodology.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_rgee-setup.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Registro de usuario en la plataforma de Google Earth Engine</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -136,31 +170,31 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./requeriments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e installación de software</span></span></a>
+  <a href="./01_requeriments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e instalación de software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rgee-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Configuración de rgee</span></span></a>
+  <a href="./02_rgee-setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Registro de usuario en la plataforma de Google Earth Engine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methodology.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
+  <a href="./03_methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es RUSLE?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rusle_with_rgee.html" class="sidebar-item-text sidebar-link">
+  <a href="./04_rusle_with_rgee.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./results.html" class="sidebar-item-text sidebar-link">
+  <a href="./05_results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
   </div>
 </li>
@@ -180,12 +214,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#factor-r" id="toc-factor-r" class="nav-link active" data-scroll-target="#factor-r"><span class="header-section-number">3.1</span> Factor R</a></li>
-  <li><a href="#factor-k" id="toc-factor-k" class="nav-link" data-scroll-target="#factor-k"><span class="header-section-number">3.2</span> Factor K</a></li>
-  <li><a href="#factor-ls" id="toc-factor-ls" class="nav-link" data-scroll-target="#factor-ls"><span class="header-section-number">3.3</span> Factor LS</a></li>
-  <li><a href="#factor-c" id="toc-factor-c" class="nav-link" data-scroll-target="#factor-c"><span class="header-section-number">3.4</span> Factor C</a></li>
-  <li><a href="#calculo-de-la-erosion" id="toc-calculo-de-la-erosion" class="nav-link" data-scroll-target="#calculo-de-la-erosion"><span class="header-section-number">3.5</span> Calculo de la Erosion</a></li>
-  <li><a href="#flujograma-de-trabajo" id="toc-flujograma-de-trabajo" class="nav-link" data-scroll-target="#flujograma-de-trabajo"><span class="header-section-number">3.6</span> Flujograma de trabajo</a></li>
+  <li><a href="#registro-de-gmail" id="toc-registro-de-gmail" class="nav-link active" data-scroll-target="#registro-de-gmail"><span class="header-section-number">2.1</span> Registro de GMAIL</a></li>
+  <li><a href="#confirmación-de-earth-engine" id="toc-confirmación-de-earth-engine" class="nav-link" data-scroll-target="#confirmación-de-earth-engine"><span class="header-section-number">2.2</span> Confirmación de Earth Engine</a></li>
+  <li><a href="#configuración-de-gcloudcli" id="toc-configuración-de-gcloudcli" class="nav-link" data-scroll-target="#configuración-de-gcloudcli"><span class="header-section-number">2.3</span> Configuración de GCloudCLI</a></li>
+  <li><a href="#registro-de-crendenciales" id="toc-registro-de-crendenciales" class="nav-link" data-scroll-target="#registro-de-crendenciales"><span class="header-section-number">2.4</span> Registro de crendenciales</a></li>
+  <li><a href="#configuración-de-rgee" id="toc-configuración-de-rgee" class="nav-link" data-scroll-target="#configuración-de-rgee"><span class="header-section-number">2.5</span> Configuración de rgee</a></li>
+  <li><a href="#hola-mundo-en-rgee" id="toc-hola-mundo-en-rgee" class="nav-link" data-scroll-target="#hola-mundo-en-rgee"><span class="header-section-number">2.6</span> Hola mundo en rgee</a></li>
   </ul>
 </nav>
     </div>
@@ -194,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Registro de usuario en la plataforma de Google Earth Engine</span></h1>
 </div>
 
 
@@ -212,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">3 de agosto de 2023</p>
+      <p class="date-modified">7 de agosto de 2023</p>
     </div>
   </div>
     
@@ -221,24 +255,64 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>¿Qué es RUSLE?</p>
-<section id="factor-r" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="factor-r"><span class="header-section-number">3.1</span> Factor R</h2>
+<section id="registro-de-gmail" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="registro-de-gmail"><span class="header-section-number">2.1</span> Registro de GMAIL</h2>
+<p>Para poder acceder a todos los beneficios que nos ofrece la plataforma de Earth Engine es necesario contar con una cuenta de GMAIL activo.</p>
+<p>Para registrarnos nos dirigimos a 👉 : <a href="https://code.earthengine.google.com/register" class="uri">https://code.earthengine.google.com/register</a></p>
+<p><img src="https://user-images.githubusercontent.com/23284899/258827533-6b7e7038-7134-4ced-ac30-ed13bf17cd33.png" width="100%"></p>
+<p>Earth Engine te ofrece dos alternativas para poder registrarte:</p>
+<ul>
+<li><a href="https://earthengine.google.com/commercial/">Usuario comercial</a>: Desarrollo de productos comerciales,monetization de servicos, etc.</li>
+<li><a href="https://earthengine.google.com/noncommercial/">Usurio no comercial</a>: Investigación, docencia, etc.</li>
+</ul>
+<p>Para nuestro interés procedemos a elegir la segunda opción.</p>
+<p><img src="https://user-images.githubusercontent.com/23284899/258835768-d84c50b2-0c74-4ee9-a7d8-c5bf7137360b.png" width="100%"></p>
+<p>Este nos llevará a una nueva penstaña en donde nos solicitará llenar nuestros datos personales y algunas preguntas adicionales como la afiliación y cuales son las intenciones de usar Earth Engine.</p>
+<p><img src="https://user-images.githubusercontent.com/23284899/258846389-57859ce1-19df-44f7-924f-0958591ef78e.png" width="100%"></p>
+<p>Finalizado el registro Earth Engine, solo nos queda esperar el correo de confirmación para poder acceder sin ninguna restricción a la plataforma. Es necesario tener en cuenta que la habilitación puede tomar un lapso de tiempo, hoy en día es casi de forma automática, pero esto podría tomar en algunos casos entre 1 a 2 días.</p>
+<p><img src="https://user-images.githubusercontent.com/23284899/258846473-981e1659-82cc-477c-93c2-bbf1cf89ee1f.png"></p>
 </section>
-<section id="factor-k" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="factor-k"><span class="header-section-number">3.2</span> Factor K</h2>
+<section id="confirmación-de-earth-engine" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="confirmación-de-earth-engine"><span class="header-section-number">2.2</span> Confirmación de Earth Engine</h2>
+<p>Con este correo de bienvenida de Earth Engine, podemos estár al 100% seguro de tener acceso a :</p>
+<ul>
+<li>Earth Engine Code Editor</li>
+<li>Earth Engine Developer Docs</li>
+<li>Eartg Engine Explore</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/23284899/258848622-c362d3ca-bb81-419c-b273-2fa4be01f44f.png"></p>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observacón:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La vinculación de GMAIL hasta el correo de configuración por parte de Earth Engine, es la base fundamental para posteriormente trabajar en cualquier lenguage de programación que consume la API de Earth Engine (R, python, Js, Julia).</p>
+</div>
+</div>
 </section>
-<section id="factor-ls" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="factor-ls"><span class="header-section-number">3.3</span> Factor LS</h2>
+<section id="configuración-de-gcloudcli" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="configuración-de-gcloudcli"><span class="header-section-number">2.3</span> Configuración de GCloudCLI</h2>
+<p>Para poder vincular Google Earth Engine con R, es necesario contalar con la instalación de GCloud CLI, para instalar este software desde R solo necesitamos cargar la librería <code>cloudml</code> y utilizar el siguiente comando <code>gcloud_install()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activación o llamado de los paquetes instalados</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cloudml)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalación de GCloud CLI</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcloud_install</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="factor-c" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="factor-c"><span class="header-section-number">3.4</span> Factor C</h2>
+<section id="registro-de-crendenciales" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="registro-de-crendenciales"><span class="header-section-number">2.4</span> Registro de crendenciales</h2>
 </section>
-<section id="calculo-de-la-erosion" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="calculo-de-la-erosion"><span class="header-section-number">3.5</span> Calculo de la Erosion</h2>
+<section id="configuración-de-rgee" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="configuración-de-rgee"><span class="header-section-number">2.5</span> Configuración de rgee</h2>
 </section>
-<section id="flujograma-de-trabajo" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="flujograma-de-trabajo"><span class="header-section-number">3.6</span> Flujograma de trabajo</h2>
+<section id="hola-mundo-en-rgee" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="hola-mundo-en-rgee"><span class="header-section-number">2.6</span> Hola mundo en rgee</h2>
 
 
 </section>
@@ -594,13 +668,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rgee-setup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Configuración de rgee</span></span>
+      <a href="./01_requeriments.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e instalación de software</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rusle_with_rgee.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03_methodology.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es RUSLE?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

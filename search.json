@@ -7,99 +7,99 @@
     "text": "!Bienvenid@s! 👋\n\nEste manual lleva por título “Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología RUSLE y rgee”. El objetivo, de esta guía dar a conocer a los usuarios y nuevos usuarios un flujo de trabajo reproducible y replicable para cualquier área de estudio que desea estimar y analizar los patrones espaciales y temporales de la erosión de suelo.\nBajo el conexto de la ciencia datos y el apogeo de la mineria de datos (big data o data mining), esta guía dará a conocer el fácil acceso y procesamientos automatico de datos geográficos (geocomputación o geografía computacional) que permitan su manipulación para el cálculo de la erosión del suelo sin tener la necesidad de contar con elevadas capacidades computacionales.\nFinalmente, para poder reproducir y replicar satisfactoriamente este manual se debe tener cierto acercamiento a cualquier lenguaje de programación orientado a objetos (R,python, JavaScript, etc), asimismo se dará ciertas requerimientos que deberá presentar tu laptop o pc para la instalación de software con el fin de cumplir los objetivos mostrados inicialmente, es necesario recalcar que todo los procesos que se darán a conocer en los próximos cápitulos serán desarrollado sólo bajo el lenguaje de programación de R."
   },
   {
-    "objectID": "requeriments.html#qué-es-r",
-    "href": "requeriments.html#qué-es-r",
-    "title": "1  Aspectos generales e installación de software",
+    "objectID": "01_requeriments.html#qué-es-r",
+    "href": "01_requeriments.html#qué-es-r",
+    "title": "1  Aspectos generales e instalación de software",
     "section": "1.1 ¿Qué es R?",
     "text": "1.1 ¿Qué es R?\nEs un lenguaje de programación interpretado de código abierto multi-plataforma que permite hacer diferentes tipos de análisis estadísticos, desde importar datos, ordenarlos, modelar y visualizar mediante gráficos de alta calidad, e incluir en informes académicos de manera científica (Hadley Wickham y Garrett Grolemund,2017 ).\n\nCaracterísticas:\n\nEs un software libre y de código abierto.\nCorre en multiples sistemas operativos (GNU/Linux, MacOSX y Windows).\nPosee una variedad de paquetes para temás específicos.\nComunidad científica muy dinámica."
   },
   {
-    "objectID": "requeriments.html#qué-es-rtools",
-    "href": "requeriments.html#qué-es-rtools",
-    "title": "1  Aspectos generales e installación de software",
+    "objectID": "01_requeriments.html#qué-es-rtools",
+    "href": "01_requeriments.html#qué-es-rtools",
+    "title": "1  Aspectos generales e instalación de software",
     "section": "1.2 ¿Qué es Rtools?",
     "text": "1.2 ¿Qué es Rtools?\nEs una colección de herramientas necesarias en R para compilar y construir paquetes desde el código fuente en solo los sistemas operativos de Windows, si no se tiene instalado, no se podrían instalar ni utilizar muchos paquetes que requieren está compilación basadas en C o C++."
   },
   {
-    "objectID": "requeriments.html#qué-es-rstudio",
-    "href": "requeriments.html#qué-es-rstudio",
-    "title": "1  Aspectos generales e installación de software",
+    "objectID": "01_requeriments.html#qué-es-rstudio",
+    "href": "01_requeriments.html#qué-es-rstudio",
+    "title": "1  Aspectos generales e instalación de software",
     "section": "1.3 ¿Qué es Rstudio?",
     "text": "1.3 ¿Qué es Rstudio?\nEs un entorno de desarrollo integrado (IDE) para R. Incluye una consola, un editor de código, una consola, un gestor para la administración del espacio de trabajo, entre otros.\nCONCLUSIÓN: “RSTUDIO ES EL ROSTRO BONITO DE R”"
   },
   {
-    "objectID": "requeriments.html#instalación-de-r-rtools-y-rstudio",
-    "href": "requeriments.html#instalación-de-r-rtools-y-rstudio",
-    "title": "1  Aspectos generales e installación de software",
+    "objectID": "01_requeriments.html#instalación-de-r-rtools-y-rstudio",
+    "href": "01_requeriments.html#instalación-de-r-rtools-y-rstudio",
+    "title": "1  Aspectos generales e instalación de software",
     "section": "1.4 Instalación de R, Rtools y Rstudio",
     "text": "1.4 Instalación de R, Rtools y Rstudio"
   },
   {
-    "objectID": "requeriments.html#cuál-es-el-concepto-de-un-paquete-en-r",
-    "href": "requeriments.html#cuál-es-el-concepto-de-un-paquete-en-r",
-    "title": "1  Aspectos generales e installación de software",
+    "objectID": "01_requeriments.html#cuál-es-el-concepto-de-un-paquete-en-r",
+    "href": "01_requeriments.html#cuál-es-el-concepto-de-un-paquete-en-r",
+    "title": "1  Aspectos generales e instalación de software",
     "section": "1.5 ¿Cuál es el concepto de un paquete en R?",
     "text": "1.5 ¿Cuál es el concepto de un paquete en R?\nUn paquete en R es una colección organizada de funciones, datos y documentación que se agrupa para resolver un conjunto particular de problemas (Hadley Wickham, 2021).\nEstos son los paquetes que se utilizará durante todo flujo de trabajo 👇\n\n\n\n\n\n  \n    {tidyverse}\n    \n    Paquete que te permite hacer ciencia de datos.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {tidyterra}\n    \n    Paquete que te permite manipular datos raster.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {cloudml}\n    \n    Paquete que te permite instalar y utilizar GCloud CLI.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {rgee}\n    \n    Paquete que integrar Google Earth Engine con R.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {tmap}\n    \n    Paquete para generar mapas temáticos.\n    Más información,clic aquí\n  \n\n\n\n\n  \n    {gifski}\n    \n    Paquete que te permite realizar gif de forma sencilla.\n    Más información,clic aquí"
   },
   {
-    "objectID": "requeriments.html#instalación-de-paquetes-en-r",
-    "href": "requeriments.html#instalación-de-paquetes-en-r",
-    "title": "1  Aspectos generales e installación de software",
+    "objectID": "01_requeriments.html#instalación-de-paquetes-en-r",
+    "href": "01_requeriments.html#instalación-de-paquetes-en-r",
+    "title": "1  Aspectos generales e instalación de software",
     "section": "1.6 Instalación de paquetes en R",
-    "text": "1.6 Instalación de paquetes en R\nUna vez instalada los software de R y Rstudio procederemos a instalar y configurar todos los paquetes mencionados en la sección de requerimientos.\nEste proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.\n\n# Lista de paquetes a instalar\npkgs &lt;- c(\"tidyverse\", \"tidyterra\", \"rgee\", \"tmap\", \"gifski\", \"cloudml\")\n# install.packages(pkgs = pkgs, dependencies = TRUE)\n\nPara verificar que todo los paquetes fuerón instalados, corremos el siguiente script:\n\n# Verificar la instalación de los paquetes\nfor (pkg in pkgs) {\n  if (!requireNamespace(pkg, quietly = TRUE)) {\n    message(paste(\"El paquete\", pkg, \"no está instalado.\"))\n  } else {\n    message(paste(\"El paquete\", pkg, \"está instalado y cargado correctamente.\"))\n  }\n}\n\nEl paquete tidyverse está instalado y cargado correctamente.\nEl paquete tidyterra está instalado y cargado correctamente.\nEl paquete rgee está instalado y cargado correctamente.\nEl paquete tmap está instalado y cargado correctamente.\nEl paquete gifski está instalado y cargado correctamente.\nEl paquete cloudml está instalado y cargado correctamente"
+    "text": "1.6 Instalación de paquetes en R\nUna vez instalada los software de R y Rstudio procederemos a instalar y configurar todos los paquetes mencionados en la sección de requerimientos.\nEste proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.\n\n# Lista de paquetes a instalar\npkgs &lt;- c(\"tidyverse\", \"tidyterra\",\"rgee\" ,\"tmap\", \"gifski\", \"cloudml\", \"sf\")\n# install.packages(pkgs = pkgs, dependencies = TRUE)\n# Se recomienda instalar la versión de GitHub de rgee\n\nPara verificar que todo los paquetes fuerón instalados, corremos el siguiente script:\n\n# Verificar la instalación de los paquetes\nfor (pkg in pkgs) {\n  if (!requireNamespace(pkg, quietly = TRUE)) {\n    message(paste(\"El paquete\", pkg, \"no está instalado.\"))\n  } else {\n    message(paste(\"El paquete\", pkg, \"está instalado y cargado correctamente.\"))\n  }\n}\n\nEl paquete tidyverse está instalado y cargado correctamente.\nEl paquete tidyterra está instalado y cargado correctamente.\nEl paquete rgee está instalado y cargado correctamente.\nEl paquete tmap está instalado y cargado correctamente.\nEl paquete gifski está instalado y cargado correctamente.\nEl paquete cloudml está instalado y cargado correctamente.\nEl paquete sf está instalado y cargado correctamente"
   },
   {
-    "objectID": "rgee-setup.html",
-    "href": "rgee-setup.html",
-    "title": "2  Configuración de rgee",
-    "section": "",
-    "text": "# Activación o llamado de los paquetes instalados\nlibrary(cloudml)\nlibrary(rgee)"
+    "objectID": "02_rgee-setup.html#registro-de-gmail",
+    "href": "02_rgee-setup.html#registro-de-gmail",
+    "title": "2  Registro de usuario en la plataforma de Google Earth Engine",
+    "section": "2.1 Registro de GMAIL",
+    "text": "2.1 Registro de GMAIL\nPara poder acceder a todos los beneficios que nos ofrece la plataforma de Earth Engine es necesario contar con una cuenta de GMAIL activo.\nPara registrarnos nos dirigimos a 👉 : https://code.earthengine.google.com/register\n\nEarth Engine te ofrece dos alternativas para poder registrarte:\n\nUsuario comercial: Desarrollo de productos comerciales,monetization de servicos, etc.\nUsurio no comercial: Investigación, docencia, etc.\n\nPara nuestro interés procedemos a elegir la segunda opción.\n\nEste nos llevará a una nueva penstaña en donde nos solicitará llenar nuestros datos personales y algunas preguntas adicionales como la afiliación y cuales son las intenciones de usar Earth Engine.\n\nFinalizado el registro Earth Engine, solo nos queda esperar el correo de confirmación para poder acceder sin ninguna restricción a la plataforma. Es necesario tener en cuenta que la habilitación puede tomar un lapso de tiempo, hoy en día es casi de forma automática, pero esto podría tomar en algunos casos entre 1 a 2 días."
   },
   {
-    "objectID": "methodology.html#factor-r",
-    "href": "methodology.html#factor-r",
-    "title": "3  Metodología",
-    "section": "3.1 Factor R",
-    "text": "3.1 Factor R"
+    "objectID": "02_rgee-setup.html#confirmación-de-earth-engine",
+    "href": "02_rgee-setup.html#confirmación-de-earth-engine",
+    "title": "2  Registro de usuario en la plataforma de Google Earth Engine",
+    "section": "2.2 Confirmación de Earth Engine",
+    "text": "2.2 Confirmación de Earth Engine\nCon este correo de bienvenida de Earth Engine, podemos estár al 100% seguro de tener acceso a :\n\nEarth Engine Code Editor\nEarth Engine Developer Docs\nEartg Engine Explore\n\n\n\n\n\n\n\n\nObservacón:\n\n\n\nLa vinculación de GMAIL hasta el correo de configuración por parte de Earth Engine, es la base fundamental para posteriormente trabajar en cualquier lenguage de programación que consume la API de Earth Engine (R, python, Js, Julia)."
   },
   {
-    "objectID": "methodology.html#factor-k",
-    "href": "methodology.html#factor-k",
-    "title": "3  Metodología",
-    "section": "3.2 Factor K",
-    "text": "3.2 Factor K"
+    "objectID": "02_rgee-setup.html#configuración-de-gcloudcli",
+    "href": "02_rgee-setup.html#configuración-de-gcloudcli",
+    "title": "2  Registro de usuario en la plataforma de Google Earth Engine",
+    "section": "2.3 Configuración de GCloudCLI",
+    "text": "2.3 Configuración de GCloudCLI\nPara poder vincular Google Earth Engine con R, es necesario contalar con la instalación de GCloud CLI, para instalar este software desde R solo necesitamos cargar la librería cloudml y utilizar el siguiente comando gcloud_install().\n\n# Activación o llamado de los paquetes instalados\nlibrary(cloudml)\n# Instalación de GCloud CLI\ngcloud_install()"
   },
   {
-    "objectID": "methodology.html#factor-ls",
-    "href": "methodology.html#factor-ls",
-    "title": "3  Metodología",
-    "section": "3.3 Factor LS",
-    "text": "3.3 Factor LS"
+    "objectID": "02_rgee-setup.html#registro-de-crendenciales",
+    "href": "02_rgee-setup.html#registro-de-crendenciales",
+    "title": "2  Registro de usuario en la plataforma de Google Earth Engine",
+    "section": "2.4 Registro de crendenciales",
+    "text": "2.4 Registro de crendenciales"
   },
   {
-    "objectID": "methodology.html#factor-c",
-    "href": "methodology.html#factor-c",
-    "title": "3  Metodología",
-    "section": "3.4 Factor C",
-    "text": "3.4 Factor C"
+    "objectID": "02_rgee-setup.html#configuración-de-rgee",
+    "href": "02_rgee-setup.html#configuración-de-rgee",
+    "title": "2  Registro de usuario en la plataforma de Google Earth Engine",
+    "section": "2.5 Configuración de rgee",
+    "text": "2.5 Configuración de rgee"
   },
   {
-    "objectID": "methodology.html#calculo-de-la-erosion",
-    "href": "methodology.html#calculo-de-la-erosion",
-    "title": "3  Metodología",
-    "section": "3.5 Calculo de la Erosion",
-    "text": "3.5 Calculo de la Erosion"
+    "objectID": "02_rgee-setup.html#hola-mundo-en-rgee",
+    "href": "02_rgee-setup.html#hola-mundo-en-rgee",
+    "title": "2  Registro de usuario en la plataforma de Google Earth Engine",
+    "section": "2.6 Hola mundo en rgee",
+    "text": "2.6 Hola mundo en rgee"
   },
   {
-    "objectID": "methodology.html#flujograma-de-trabajo",
-    "href": "methodology.html#flujograma-de-trabajo",
-    "title": "3  Metodología",
-    "section": "3.6 Flujograma de trabajo",
-    "text": "3.6 Flujograma de trabajo"
+    "objectID": "03_methodology.html#definición-de-parámetros",
+    "href": "03_methodology.html#definición-de-parámetros",
+    "title": "3  ¿Qué es RUSLE?",
+    "section": "3.1 Definición de parámetros",
+    "text": "3.1 Definición de parámetros\n\n3.1.1 Factor R 🌧️\nEs el factor de erosividad de escorrentía de lluvia (MJ·mm·ha−1·h−1·Año−1), índice numérico que expresa la capacidad de la lluvia para erosionar el suelo. Para su cálculo existen diferentes modelos; sin embargo para este manual se consideró usar la formula de Wischmeier y Smith (1978) presentada el paper de Zubairul Isla la cual la base de referencia.\n\\[\\begin{equation}\n    R = 1.73 \\times 10^{(1.5\\times\\log(Pm^2/Pa)-0.08188)}   \n\\end{equation}\\]\nDonde:\n\nR es la erosividad de lluvia en \\((MJ\\) en \\(mm)/(ha^{-1} h^{-1} año^{-1})\\) (mega julios por milímetro por hectárea por hora por año)\nPm es la precipitación mensual\nPa es la precipitación en un año\n\n\n\n3.1.2 Factor K\nEs el factor de erodibilidad del suelo \\((Mg·h·MJ^{−1}·mm^{−1})\\), una descripción numérica de la susceptibilidad de las partículas del suelo a la erosión hídrica. Estos valores van de 0 a 1, donde 0 es menos suceptible y 1 es altamente susceptible a la erosión hídrica.\nPara su cálculo se tomo como referencia la formula de Sharpley and Williams (1990).\n\\[\\begin{equation}\n    K = [0.2 + 0.3 \\times exp(-0.0256 \\times SAN \\times (1 - \\frac{SIL}{100}))]\\times[1-\\frac{0.25\\times CLA}{CLA + exp(3.72 - 2.95\\times CLA)}]  \n\\end{equation}\\]\nDonde:\n\nSAN: Porcentaje de arena\nSIL: Porcentaje de limo\nCLA: Porcentaje de arcilla\nSN: 1 - SAN/100\n\n\n\n3.1.3 Factor LS\nEs el factor de longitud de pendiente (L) y el factor de inclinación (S), ambos variables combinadas expresan el efecto de la topografía local sobre la tasa dde erosión del suelo. Para su cálculo se tomo en cuenta la formula establecida por Moore (1985).\n\\[\\begin{equation}\n    LS = (0.4 + 1) \\times (Flowacc\\times CellSize /22.13)^{0.4} \\times (\\sin(\\theta)/0.0896)^{1.3}\n\\end{equation}\\]\nDonde:\n\nFlowacc : Acumulación de flujo\nCellSize: Tamaño de pixel\n\\(\\theta\\) : Mapa de pendientes en grados\n\n\n\n3.1.4 Factor C\nDetermina la eficacia relativa de los sistemas de manejo del suelo y de los cultivos en terminos de prevencion o reduccion de la perdida de suelo. Los valores oscila entre 0, para una superficie no erosible, y 1, parcela desnuda (sin vegetación). Por temas práticos muchos autores adoptan enfoques simplificados: por ejemplo, utilizar el mapas de cobertura del suelo y asignando un factor C a cada clase, o por ultima emplear los valores de NDVI y las condiciones climáticas.\nPara su cálculo se tomo como referencia la formula de Almagro et al (2019).\n\\[\\begin{equation}\n    C = 0.1 \\times(\\frac{-NDVI + 1}{2})\n\\end{equation}\\]\nDonde:\n\nFlowacc : Acumulación de flujo\nCellSize: Tamaño de pixel\n\\(\\theta\\) : Mapa de pendientes en grados\n\n\n\n3.1.5 Factor P\nRecoge la influencia que tienen las prácticas de conservación de suelos sobre las tasas de erosión, en otras palabras el factor P tiene como objetivo reducir la escorrentía del agua y, en consecuencia, la pérdida de suelo.\nPara su cálculo se tomo en consideración la tabla de valores propuestos por , donde se establece lo siguienente:\n\n\n\nClasificación de Usos de Suelo\nP\n\n\n\n\nBosque\n0.8\n\n\nTierras de cultivo\n0.5\n\n\nConstrucción\n1.0\n\n\nVegetación esparcida\n1.0\n\n\nCuerpos de agua\n1.0\n\n\nMatorral\n1.0\n\n\nHumedales\n1.0\n\n\n\nhttps://www.frontiersin.org/articles/10.3389/fenvs.2023.1136243/full"
   },
   {
-    "objectID": "results.html",
-    "href": "results.html",
+    "objectID": "05_results.html",
+    "href": "05_results.html",
     "title": "5  Resultados",
     "section": "",
     "text": "6 Graficos comparativos\n\n\n7 Mapas\n\n\n8 Animación"

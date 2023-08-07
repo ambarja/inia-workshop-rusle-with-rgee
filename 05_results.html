@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 1&nbsp; Introducción</title>
+<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 5&nbsp; Resultados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./study_area.html" rel="next">
-<link href="./installation.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./04_rusle_with_rgee.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_results.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -136,38 +136,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./requeriments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Aspectos generales</span></a>
+  <a href="./01_requeriments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e instalación de software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Configuración de rgee</span></a>
+  <a href="./02_rgee-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Registro de usuario en la plataforma de Google Earth Engine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  <a href="./03_methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es RUSLE?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_area.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Área de estudio</span></span></a>
+  <a href="./04_rusle_with_rgee.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
+  <a href="./05_results.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -182,14 +176,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#graficos-comparativos" id="toc-graficos-comparativos" class="nav-link active" data-scroll-target="#graficos-comparativos"><span class="header-section-number">6</span> Graficos comparativos</a></li>
+  <li><a href="#mapas" id="toc-mapas" class="nav-link" data-scroll-target="#mapas"><span class="header-section-number">7</span> Mapas</a></li>
+  <li><a href="#animación" id="toc-animación" class="nav-link" data-scroll-target="#animación"><span class="header-section-number">8</span> Animación</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></h1>
 </div>
 
 
@@ -216,13 +218,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ul>
-<li>Contexto general de la erosion de suelo a nivel local, sudamrica y peru</li>
-<li>Importancia del mapeo digital de suelo</li>
-<li>Importancia de la gestión de recursos naturales.</li>
-</ul>
+<section id="graficos-comparativos" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Graficos comparativos</h1>
+</section>
+<section id="mapas" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Mapas</h1>
+</section>
+<section id="animación" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Animación</h1>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -575,13 +581,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./installation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuración de rgee</span>
+      <a href="./04_rusle_with_rgee.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./study_area.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Área de estudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

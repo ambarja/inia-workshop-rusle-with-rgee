@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - Configuración de rgee</title>
+<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 3&nbsp; ¿Qué es RUSLE?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
-<link href="./requeriments.html" rel="prev">
+<link href="./04_rusle_with_rgee.html" rel="next">
+<link href="./02_rgee-setup.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -110,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation.html">Configuración de rgee</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_methodology.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es RUSLE?</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -170,38 +138,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./requeriments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Aspectos generales</span></a>
+  <a href="./01_requeriments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aspectos generales e instalación de software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Configuración de rgee</span></a>
+  <a href="./02_rgee-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Registro de usuario en la plataforma de Google Earth Engine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  <a href="./03_methodology.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es RUSLE?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./study_area.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Área de estudio</span></span></a>
+  <a href="./04_rusle_with_rgee.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metodología</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
+  <a href="./05_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -216,14 +178,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#definición-de-parámetros" id="toc-definición-de-parámetros" class="nav-link active" data-scroll-target="#definición-de-parámetros"><span class="header-section-number">3.1</span> Definición de parámetros</a>
+  <ul class="collapse">
+  <li><a href="#factor-r" id="toc-factor-r" class="nav-link" data-scroll-target="#factor-r"><span class="header-section-number">3.1.1</span> Factor R 🌧️</a></li>
+  <li><a href="#factor-k" id="toc-factor-k" class="nav-link" data-scroll-target="#factor-k"><span class="header-section-number">3.1.2</span> Factor K</a></li>
+  <li><a href="#factor-ls" id="toc-factor-ls" class="nav-link" data-scroll-target="#factor-ls"><span class="header-section-number">3.1.3</span> Factor LS</a></li>
+  <li><a href="#factor-c" id="toc-factor-c" class="nav-link" data-scroll-target="#factor-c"><span class="header-section-number">3.1.4</span> Factor C</a></li>
+  <li><a href="#factor-p" id="toc-factor-p" class="nav-link" data-scroll-target="#factor-p"><span class="header-section-number">3.1.5</span> Factor P</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Configuración de rgee</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es RUSLE?</span></h1>
 </div>
 
 
@@ -241,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">3 de agosto de 2023</p>
+      <p class="date-modified">7 de agosto de 2023</p>
     </div>
   </div>
     
@@ -250,13 +225,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activación o llamado de los paquetes instalados</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cloudml)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgee)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Metodología desarrollada por Renard et al (1991) que permite estimar la perdida media anual de suelo en función a un modelo matemático.</p>
+<p><span class="math display">\[\begin{equation}
+    A = R \cdot K \cdot LS \cdot C \cdot P
+\end{equation}\]</span></p>
+<p>Donde los cinco parámetros de entrada están relacionados con la precipitación, las características del suelo, la topografía, el manejo de la cubierta y los cultivos y las prácticas de conservación.</p>
+<section id="definición-de-parámetros" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="definición-de-parámetros"><span class="header-section-number">3.1</span> Definición de parámetros</h2>
+<section id="factor-r" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="factor-r"><span class="header-section-number">3.1.1</span> Factor R 🌧️</h3>
+<p>Es el factor de erosividad de escorrentía de lluvia (MJ·mm·ha−1·h−1·Año−1), índice numérico que expresa la capacidad de la lluvia para erosionar el suelo. Para su cálculo existen diferentes modelos; sin embargo para este manual se consideró usar la formula de Wischmeier y Smith (1978) presentada el paper de <a href="">Zubairul Isla</a> la cual la base de referencia.</p>
+<p><span class="math display">\[\begin{equation}
+    R = 1.73 \times 10^{(1.5\times\log(Pm^2/Pa)-0.08188)}   
+\end{equation}\]</span></p>
+<p>Donde:</p>
+<ul>
+<li>R es la erosividad de lluvia en <span class="math inline">\((MJ\)</span> en <span class="math inline">\(mm)/(ha^{-1} h^{-1} año^{-1})\)</span> (mega julios por milímetro por hectárea por hora por año)</li>
+<li>Pm es la precipitación mensual</li>
+<li>Pa es la precipitación en un año</li>
+</ul>
+</section>
+<section id="factor-k" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="factor-k"><span class="header-section-number">3.1.2</span> Factor K</h3>
+<p>Es el factor de erodibilidad del suelo <span class="math inline">\((Mg·h·MJ^{−1}·mm^{−1})\)</span>, una descripción numérica de la susceptibilidad de las partículas del suelo a la erosión hídrica. Estos valores van de 0 a 1, donde 0 es menos suceptible y 1 es altamente susceptible a la erosión hídrica.</p>
+<p>Para su cálculo se tomo como referencia la formula de Sharpley and Williams (1990).</p>
+<p><span class="math display">\[\begin{equation}
+    K = [0.2 + 0.3 \times exp(-0.0256 \times SAN \times (1 - \frac{SIL}{100}))]\times[1-\frac{0.25\times CLA}{CLA + exp(3.72 - 2.95\times CLA)}]  
+\end{equation}\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><p>SAN: Porcentaje de arena</p></li>
+<li><p>SIL: Porcentaje de limo</p></li>
+<li><p>CLA: Porcentaje de arcilla</p></li>
+<li><p>SN: 1 - SAN/100</p></li>
+</ul>
+</section>
+<section id="factor-ls" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="factor-ls"><span class="header-section-number">3.1.3</span> Factor LS</h3>
+<p>Es el factor de longitud de pendiente (L) y el factor de inclinación (S), ambos variables combinadas expresan el efecto de la topografía local sobre la tasa dde erosión del suelo. Para su cálculo se tomo en cuenta la formula establecida por Moore (1985).</p>
+<p><span class="math display">\[\begin{equation}
+    LS = (0.4 + 1) \times (Flowacc\times CellSize /22.13)^{0.4} \times (\sin(\theta)/0.0896)^{1.3}
+\end{equation}\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><p>Flowacc : Acumulación de flujo</p></li>
+<li><p>CellSize: Tamaño de pixel</p></li>
+<li><p><span class="math inline">\(\theta\)</span> : Mapa de pendientes en grados</p></li>
+</ul>
+</section>
+<section id="factor-c" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="factor-c"><span class="header-section-number">3.1.4</span> Factor C</h3>
+<p>Determina la eficacia relativa de los sistemas de manejo del suelo y de los cultivos en terminos de prevencion o reduccion de la perdida de suelo. Los valores oscila entre 0, para una superficie no erosible, y 1, parcela desnuda (sin vegetación). Por temas práticos muchos autores adoptan enfoques simplificados: por ejemplo, utilizar el mapas de cobertura del suelo y asignando un factor C a cada clase, o por ultima emplear los valores de NDVI y las condiciones climáticas.</p>
+<p>Para su cálculo se tomo como referencia la formula de Almagro et al (2019).</p>
+<p><span class="math display">\[\begin{equation}
+    C = 0.1 \times(\frac{-NDVI + 1}{2})
+\end{equation}\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><p>Flowacc : Acumulación de flujo</p></li>
+<li><p>CellSize: Tamaño de pixel</p></li>
+<li><p><span class="math inline">\(\theta\)</span> : Mapa de pendientes en grados</p></li>
+</ul>
+</section>
+<section id="factor-p" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="factor-p"><span class="header-section-number">3.1.5</span> Factor P</h3>
+<p>Recoge la influencia que tienen las prácticas de conservación de suelos sobre las tasas de erosión, en otras palabras el factor P tiene como objetivo reducir la escorrentía del agua y, en consecuencia, la pérdida de suelo.</p>
+<p>Para su cálculo se tomo en consideración la tabla de valores propuestos por , donde se establece lo siguienente:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Clasificación de Usos de Suelo</th>
+<th>P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bosque</td>
+<td>0.8</td>
+</tr>
+<tr class="even">
+<td>Tierras de cultivo</td>
+<td>0.5</td>
+</tr>
+<tr class="odd">
+<td>Construcción</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td>Vegetación esparcida</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td>Cuerpos de agua</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td>Matorral</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td>Humedales</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>https://www.frontiersin.org/articles/10.3389/fenvs.2023.1136243/full</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -609,13 +686,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./requeriments.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Aspectos generales</span>
+      <a href="./02_rgee-setup.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Registro de usuario en la plataforma de Google Earth Engine</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04_rusle_with_rgee.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
