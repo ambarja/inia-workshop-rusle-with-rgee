@@ -1,5 +1,8 @@
-# !Bienvenid@s! {.unnumbered}
+# !Bienvenid@s! 👋 {.unnumbered}
+<hr/>
 
-This is a Quarto book.
+Este manual lleva por título *"Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología RUSLE y rgee"*. **El objetivo, de esta guía dar a conocer a los usuarios y nuevos usuarios un flujo de trabajo reproducible y replicable para cualquier área de estudio que desea estimar y analizar los patrones espaciales y temporales de la erosión de suelo**.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Bajo el conexto de la ciencia datos y el apogeo de la mineria de datos (**big data** o **data mining**), esta guía dará a conocer el fácil acceso y procesamientos automatico de datos geográficos (**geocomputación o geografía computacional**) que permitan su manipulación para el cálculo de la erosión del suelo sin tener la necesidad de contar con elevadas capacidades computacionales.
+
+Finalmente, para poder reproducir y replicar satisfactoriamente este manual se debe tener cierto acercamiento a cualquier lenguaje de programación orientado a objetos (**R**,**python**, **JavaScript**, **etc**), asimismo se dará ciertas requerimientos que deberá presentar tu laptop o pc para la instalación de software con el fin de cumplir los objetivos mostrados inicialmente, es necesario recalcar que todo los procesos que se darán a conocer en los próximos cápitulos serán desarrollado sólo bajo el lenguaje de    programación de **R**. 

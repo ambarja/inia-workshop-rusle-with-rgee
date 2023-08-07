@@ -1,0 +1,24 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: #ffffff;
+$body-color: rgb(0, 0, 0);
+$link-color: #4b45ff;
+
+// Code blocks
+$code-block-bg-alpha: -.8;
+
+// Geobackground
+body {
+    margin: 0; /* Para eliminar los márgenes predeterminados del body */
+    padding: 0; /* Para eliminar el relleno predeterminado del body */
+    /* background-image: url('https://user-images.githubusercontent.com/23284899/258161568-cd38de6d-b902-4e4f-802a-3d6d63bf516c.png');
+    /* background-size: 100% 31%; /* Ajustar el tamaño de la imagen para cubrir todo el body */
+    /* background-repeat: repeat;*/
+  }
+  
+  .sidebar.sidebar-navigation {
+    width: 250px; /* Ajusta el ancho según tus necesidades */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    background-color: rgb(255, 255, 255,0.7);  /* Ajusta los colores según tus preferencias */
+  }
+  

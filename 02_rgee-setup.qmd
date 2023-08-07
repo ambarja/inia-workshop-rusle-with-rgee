@@ -1,0 +1,69 @@
+## Registro de usuario en la plataforma de Google Earth Engine
+## Registro de GMAIL
+
+Para poder acceder a todos los beneficios que nos ofrece la plataforma de Earth Engine es necesario contar con una cuenta de GMAIL activo. 
+
+Para registrarnos nos dirigimos a 👉 : <https://code.earthengine.google.com/register>
+
+
+![](https://user-images.githubusercontent.com/23284899/258827533-6b7e7038-7134-4ced-ac30-ed13bf17cd33.png)
+
+
+Earth Engine te ofrece dos alternativas para poder registrarte:
+
+ - [Usuario comercial](https://earthengine.google.com/commercial/): Desarrollo de productos comerciales,monetization de servicos, etc.
+ - [Usurio no comercial](https://earthengine.google.com/noncommercial/): Investigación, docencia, etc. 
+
+
+Para nuestro interés procedemos a elegir la segunda opción.
+
+![](https://user-images.githubusercontent.com/23284899/258835768-d84c50b2-0c74-4ee9-a7d8-c5bf7137360b.png)
+
+Este nos llevará a una nueva penstaña en donde nos solicitará llenar nuestros datos personales y algunas preguntas adicionales como la afiliación y cuales son las intenciones de usar Earth Engine.
+
+![](https://user-images.githubusercontent.com/23284899/258846389-57859ce1-19df-44f7-924f-0958591ef78e.png)
+
+Finalizado el registro Earth Engine, solo nos queda esperar el correo de confirmación para poder acceder sin ninguna restricción a la plataforma.
+Es necesario tener en cuenta que la habilitación puede tomar un lapso de tiempo, hoy en día es casi de forma automática, pero esto podría tomar en algunos casos entre 1 a 2 días.
+
+![](https://user-images.githubusercontent.com/23284899/258846473-981e1659-82cc-477c-93c2-bbf1cf89ee1f.png)
+
+
+## Confirmación de Earth Engine
+
+Con este correo de bienvenida de Earth Engine, podemos estár al 100% seguro de tener acceso a : 
+
+ - Earth Engine Code Editor 
+ - Earth Engine Developer Docs
+ - Eartg Engine Explore
+
+![](https://user-images.githubusercontent.com/23284899/258848622-c362d3ca-bb81-419c-b273-2fa4be01f44f.png)
+
+
+
+::: {.callout-caution appearance=minimal}
+
+## Observacón: 
+La vinculación de GMAIL hasta el correo de configuración por parte de Earth Engine, es la base fundamental para posteriormente trabajar en cualquier lenguage de programación que consume la API de Earth Engine (R, python, Js, Julia).
+:::
+
+## Configuración de GCloudCLI 
+
+Para poder vincular Google Earth Engine con R, es necesario contalar con la instalación de GCloud CLI, para instalar este software desde R solo necesitamos cargar la librería `cloudml` y utilizar el siguiente comando `gcloud_install()`.
+
+```{r}
+#| warning: false
+#| eval: false
+# Activación o llamado de los paquetes instalados
+library(cloudml)
+# Instalación de GCloud CLI
+gcloud_install()
+```
+
+## Registro de crendenciales
+
+## Configuración de rgee 
+
+
+## Hola mundo en rgee
+

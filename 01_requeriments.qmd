@@ -1,0 +1,174 @@
+# Aspectos generales e instalación de software
+
+En está sección se mostrará los conceptos básicos del software R, Rtools y Rstudio como tambien la definición de los paquetes que se utilizara en el flujo de trabajo.
+
+::: {.callout-note appearance=minimal}
+
+## Atención: 
+Para poder replicar y reproducir este manual sin ningun problema es necesario tener como mínimo las siguientes características computacionales:
+
+- Memoria RAM : 4-8 GB
+- Capacidad de almacenamiento: 255GB 
+- Procesador como mínimo: i7 con CPUde 2.40 GHz
+:::
+
+## ¿Qué es R?
+
+Es un lenguaje de programación interpretado de código abierto multi-plataforma que permite hacer diferentes tipos de análisis estadísticos, desde importar datos, ordenarlos, modelar y visualizar mediante gráficos de alta calidad, e incluir en informes académicos de manera científica (**Hadley Wickham y Garrett Grolemund,2017**  ).
+
+![](https://ambarja.github.io/ceigaUNMSM/image/r_native.PNG)
+
+
+**Características:**
+
+ - Es un software libre y de código abierto.
+ - Corre en multiples sistemas operativos (GNU/Linux, MacOSX y Windows).
+ - Posee una variedad de paquetes para temás específicos.
+ - Comunidad científica muy dinámica.
+
+## ¿Qué es Rtools?
+
+Es una colección de herramientas necesarias en R para compilar y construir paquetes desde el código fuente en solo los sistemas operativos de **Windows**, si no se tiene instalado, no se podrían instalar ni utilizar muchos paquetes que requieren está compilación
+basadas en C o C++.
+
+## ¿Qué es Rstudio?
+
+Es un entorno de desarrollo integrado (IDE) para R. Incluye una consola, un editor de código, una consola, un gestor para la administración del espacio de trabajo, entre otros.
+
+<mark>CONCLUSIÓN: "RSTUDIO ES EL ROSTRO BONITO DE R"</mark>
+
+![](https://ambarja.github.io/ceigaUNMSM/image/parts.PNG)
+
+
+## Instalación de R, Rtools y Rstudio
+
+{{< video https://www.youtube.com/embed/h2IPWVXaUuU >}}
+
+
+## ¿Cuál es el concepto de un paquete en R?
+Un paquete en R es una colección organizada de funciones, datos y documentación que se agrupa para resolver un conjunto particular de problemas (**Hadley Wickham, 2021**).
+
+Estos son los paquetes que se utilizará durante todo flujo de trabajo 👇
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4 .col-lg-4}
+```{=html}
+<style>
+    .card {background-color:#ffffff26;}
+</style>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{tidyverse}</h5>
+    <div align='center'><img src='https://soka.gitlab.io/blog/post/2019-10-06-r-tidyverse-intro/images/hex-tidyverse.png' width='100px'align='center'></div>
+    <p class="card-text">Paquete que te permite hacer ciencia de datos.</p>
+    <a href="https://www.tidyverse.org/" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+```
+:::
+
+::: {.g-col-12 .g-col-md-4 .col-lg-4}
+```{=html}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{tidyterra}</h5>
+    <div align='center'><img src='https://dieghernan.github.io/tidyterra/logo.png' width='100px'align='center'></div>
+    <p class="card-text">Paquete que te permite manipular datos raster.</p>
+    <a href="https://dieghernan.github.io/tidyterra/articles/tidyterra.html" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+```
+:::
+
+::: {.g-col-12 .g-col-md-4 .col-lg-4}
+```{=html}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{cloudml}</h5>
+    <div align='center'><img src='https://raw.githubusercontent.com/rstudio/cloudml/main/vignettes/images/cloudml.png' width='115px'align='center'></div>
+    <p class="card-text">Paquete que te permite instalar y utilizar GCloud CLI.</p>
+    <a href="https://tensorflow.rstudio.com/reference/cloudml/" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+```
+:::
+
+::: {.g-col-12 .g-col-md-4 .col-lg-4}
+```{=html}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{rgee}</h5>
+    <div align='center'><img src='https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png' width='100px'align='center'></div>
+    <p class="card-text">Paquete que integrar Google Earth Engine con R.</p>
+    <a href="https://r-spatial.github.io/rgee/" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+```
+:::
+::: {.g-col-12 .g-col-md-4 .col-lg-4}
+```{=html}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{tmap}</h5>
+    <div align='center'><img src='https://user-images.githubusercontent.com/3457131/78889077-49661800-7a63-11ea-95b6-31db1ce6815c.png' width='100px'align='center'></div>
+    <p class="card-text">Paquete para generar mapas temáticos.</p>
+    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+```
+:::
+
+::: {.g-col-12 .g-col-md-4 .col-lg-4}
+```{=html}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{gifski}</h5>
+    <div align='center'><img src='https://user-images.githubusercontent.com/23284899/258276611-89116f95-dd02-45c4-9ee5-c6df413f1484.png' width='100px'align='center'></div>
+    <p class="card-text">Paquete que te permite realizar gif de forma sencilla.</p>
+    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
+  </div>
+</div>
+```
+:::
+:::
+
+<br/>
+
+## Instalación de paquetes en R
+Una vez instalada los software de R y Rstudio procederemos a instalar y configurar todos los paquetes 
+mencionados en la sección de **requerimientos**.
+
+Este proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.
+
+```{r}
+#| eval: false
+# Lista de paquetes a instalar
+pkgs <- c("tidyverse", "tidyterra","rgee" ,"tmap", "gifski", "cloudml", "sf")
+# install.packages(pkgs = pkgs, dependencies = TRUE)
+# Se recomienda instalar la versión de GitHub de rgee
+
+```
+Para verificar que todo los paquetes fuerón instalados, corremos el siguiente script:
+
+```{r}
+#| eval: false
+# Verificar la instalación de los paquetes
+for (pkg in pkgs) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    message(paste("El paquete", pkg, "no está instalado."))
+  } else {
+    message(paste("El paquete", pkg, "está instalado y cargado correctamente."))
+  }
+}
+```
+
+```
+El paquete tidyverse está instalado y cargado correctamente.
+El paquete tidyterra está instalado y cargado correctamente.
+El paquete rgee está instalado y cargado correctamente.
+El paquete tmap está instalado y cargado correctamente.
+El paquete gifski está instalado y cargado correctamente.
+El paquete cloudml está instalado y cargado correctamente.
+El paquete sf está instalado y cargado correctamente
+```

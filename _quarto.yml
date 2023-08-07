@@ -1,18 +1,28 @@
 project:
   type: book
 
+lang: es
+language: 
+  title-block-author-single: "AUTOR"
+  title-block-published: "PUBLICADO"  
+
+date: 08/02/2023
+date-modified: last-modified
+
+
 book:
-  title: "Mapeo de Erosión del Suelo a Nivel Nacional: Un Manual con la Metodología RUSLE y el Paquete rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br>"
-  author: "Antony Barja <br> Tesista de LABSAF"
-  date: "last-modified"
-  repo-url: https://github.com/edzer/sdsr/
-  sharing: [twitter, facebook]
+  title: "Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br>"
+  author: "<i class='bi bi-person-fill'></i> Antony Barja<div class='quarto-title-meta-heading'><div><i class='bi bi-person-check-fill'></i> Revizado por: Ing.Carlos Carbajal</div></div><div><i class='bi bi-buildings-fill'></i> Afiliación: INIA-LABSAF</div>"
+  repo-url: https://ambarja.github.io/inia-workshop-rusle-with-rgee/
+  sharing: [twitter, facebook,linkedin]
+
   chapters:
     - index.qmd
-    - intro.qmd
-    - study_area.qmd
-    - methodology.qmd
-    - results.qmd
+    - 01_requeriments.qmd
+    - 02_rgee-setup.qmd
+    - 03_methodology.qmd
+    - 04_rusle_with_rgee.qmd
+    - 05_results.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -20,7 +30,7 @@ bibliography: references.bib
 format:
   html:
     theme:
-     light: flatly
-     dark: theme-dark.scss
+     light: geoscss/theme-light.scss
+     dark: geoscss/theme-dark.scss
   pdf:
     documentclass: scrreprt

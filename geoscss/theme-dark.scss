@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: #111d13;
+$body-color: white;
+$link-color: #bfd200;
+
+// Code blocks
+$code-block-bg-alpha: -.8;
+
+// Geobackground
+body {
+    margin: 0; /* Para eliminar los márgenes predeterminados del body */
+    padding: 0; /* Para eliminar el relleno predeterminado del body */
+    background-color: rgba(0, 0, 0, 0.70);  /* Ajusta los colores según tus preferencias */  
+  } 
+
+// Variables
+$background-color:rgba(0, 0, 0, 0.80); // Puedes definir aquí el color de fondo deseado
+// Estilos para el menú desplegable cuando está mostrado
+.dropdown-menu.show {
+    display: block;
+    background: $background-color; // Usamos la variable para el color de fondo
+}
+
+// Variables
+$background-color: rgba(77,77,77,0.80); // Puedes definir aquí el color de fondo deseado
+// Estilos para el menú desplegable cuando está mostrado
+.card {
+    display: block;
+    background: $background-color; // Usamos la variable para el color de fondo
+}
+
+
+
+
