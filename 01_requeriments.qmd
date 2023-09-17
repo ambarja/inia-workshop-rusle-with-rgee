@@ -144,7 +144,7 @@ Este proceso solo se realizar una única vez, cuando ya tienes instalado y confi
 ```{r}
 #| eval: false
 # Lista de paquetes a instalar
-pkgs <- c("tidyverse", "tidyterra","rgee" ,"tmap", "gifski", "cloudml", "sf")
+pkgs <- c("tidyverse", "tidyterra","remotes" ,"tmap", "gifski", "cloudml", "sf")
 # install.packages(pkgs = pkgs, dependencies = TRUE)
 # Se recomienda instalar la versión de GitHub de rgee
 
@@ -166,9 +166,39 @@ for (pkg in pkgs) {
 ```
 El paquete tidyverse está instalado y cargado correctamente.
 El paquete tidyterra está instalado y cargado correctamente.
-El paquete rgee está instalado y cargado correctamente.
+El paquete remotes está instalado y cargado correctamente.
 El paquete tmap está instalado y cargado correctamente.
 El paquete gifski está instalado y cargado correctamente.
 El paquete cloudml está instalado y cargado correctamente.
 El paquete sf está instalado y cargado correctamente
+```
+El paquete de `rgee` actualmente presenta algunos incovenientes con la versión de CRAN, especialmente para los sistemas operativos de **Windows**, se recomienda instalar la versión de desarrollo la cual está alojada en GitHub. 
+Para su correcta instalación se recomienda seguir cualquiera de las siguientes alternativas mostradas 👇 
+
+<table>
+<tr align='center'>
+  <th> Forma explítica </th>
+  <th> Forma implítica </th>
+</tr>
+
+<tr>
+<td>
+```r
+library(remotes)
+install_github('r-spatial/rgee')
+```
+</td>
+<td>
+```r
+# install.packages('remotes')
+remotes::install_github('r-spatial/rgee')
+```
+</td>
+</tr> 
+</table>
+
+
+```{r}
+#| eval: true
+remotes::install_github("r-earthengine/rgeeExtra")
 ```

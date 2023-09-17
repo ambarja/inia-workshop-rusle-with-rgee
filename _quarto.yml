@@ -32,5 +32,9 @@ format:
     theme:
      light: geoscss/theme-light.scss
      dark: geoscss/theme-dark.scss
+    mermaid: 
+      theme: forest
+    html-math-method: katex
+
   pdf:
     documentclass: scrreprt

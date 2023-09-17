@@ -1,1 +1,59 @@
 ## RUSLE con rgee
+
+En el siguente diagrama se muestra el flujo de trabajo para realizar el cálculo del mapa de erosión.
+
+```{mermaid}
+
+flowchart TD
+A[Mapeo de erosión del suelo] 
+
+A --> B[Propiedades físicas del suelo]
+A --> C[Precipitación]
+A --> D[Elevación]
+A --> E[Índice de vegetación]
+A --> F[Conservación del suelo]
+
+D --> G[Acumulación de flujo]
+D --> H[Pendiente]
+
+B --> I[Factor K]
+C --> J[Factor R]
+G --> K[Factor LS]
+H --> K[Factor LS]
+
+E --> L[Factor C]
+F --> M[Factor P]
+
+I --> N[Erosión del suelo]
+J --> N[Erosión del suelo]
+K --> N[Erosión del suelo]
+L --> N[Erosión del suelo]
+M --> N[Erosión del suelo]
+
+```
+
+## Factor K
+
+```{r}
+#| eval: false
+library(sf)
+library(tidyverse)
+library(nngeo)
+ee_Initialize(user = "geografo.pe@gmail.com")
+
+peru_ee <- map_EP |> 
+    st_as_sf() |> 
+    summarise() |> 
+    st_remove_hole |>
+    sf_as_ee() |> 
+    Map$addLayer()
+
+# Factor K 
+# Par<- el cálculo del factor K se tomo encuenta el dataset actualizado de soilgrid v2.0 
+clay <- ee$Image("projects/soilgrids-isric/clay_mean")$multiply(10)
+sand <- ee$Image("projects/soilgrids-isric/sand_mean")$multiply(10)
+silt <- ee$Image("projects/soilgrids-isric/silt_mean")$multiply(10)
+```
+
+
+

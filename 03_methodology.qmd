@@ -10,7 +10,7 @@ Donde los cinco parámetros de entrada están relacionados con la precipitación
 
 ## Definición de parámetros
 
-### Factor R 🌧️
+### Factor R
 
 Es el factor de erosividad de escorrentía de lluvia (MJ·mm·ha−1·h−1·Año−1), índice numérico que expresa la capacidad de la lluvia para erosionar el suelo.
 Para su cálculo existen diferentes modelos; sin embargo para este manual se consideró usar la formula de Wischmeier y Smith (1978) presentada el paper de [Zubairul Isla]() la cual la base de referencia.  
@@ -31,7 +31,7 @@ Es el factor de erodibilidad del suelo $(Mg·h·MJ^{−1}·mm^{−1})$, una desc
 Para su cálculo se tomo como referencia la formula de Sharpley and Williams (1990).
 
 \begin{equation}
-    K = [0.2 + 0.3 \times exp(-0.0256 \times SAN \times (1 - \frac{SIL}{100}))]\times[1-\frac{0.25\times CLA}{CLA + exp(3.72 - 2.95\times CLA)}]  
+K = [0.2 + 0.3 \times exp(-0.0256 \times SAN \times (1 - \frac{SIL}{100}))]\times[1-\frac{0.25\times CLA}{CLA + exp(3.72 - 2.95\times CLA)}]  
 \end{equation}
 
 Donde: 

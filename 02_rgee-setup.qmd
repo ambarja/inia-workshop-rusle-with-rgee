@@ -6,7 +6,7 @@ Para poder acceder a todos los beneficios que nos ofrece la plataforma de Earth 
 Para registrarnos nos dirigimos a 👉 : <https://code.earthengine.google.com/register>
 
 
-![](https://user-images.githubusercontent.com/23284899/258827533-6b7e7038-7134-4ced-ac30-ed13bf17cd33.png)
+<img src="https://user-images.githubusercontent.com/23284899/258827533-6b7e7038-7134-4ced-ac30-ed13bf17cd33.png" width='100%'/>
 
 
 Earth Engine te ofrece dos alternativas para poder registrarte:
@@ -17,16 +17,16 @@ Earth Engine te ofrece dos alternativas para poder registrarte:
 
 Para nuestro interés procedemos a elegir la segunda opción.
 
-![](https://user-images.githubusercontent.com/23284899/258835768-d84c50b2-0c74-4ee9-a7d8-c5bf7137360b.png)
+<img src="https://user-images.githubusercontent.com/23284899/258835768-d84c50b2-0c74-4ee9-a7d8-c5bf7137360b.png" width='100%'/>
 
 Este nos llevará a una nueva penstaña en donde nos solicitará llenar nuestros datos personales y algunas preguntas adicionales como la afiliación y cuales son las intenciones de usar Earth Engine.
 
-![](https://user-images.githubusercontent.com/23284899/258846389-57859ce1-19df-44f7-924f-0958591ef78e.png)
+<img src="https://user-images.githubusercontent.com/23284899/258846389-57859ce1-19df-44f7-924f-0958591ef78e.png" width='100%'/>
 
 Finalizado el registro Earth Engine, solo nos queda esperar el correo de confirmación para poder acceder sin ninguna restricción a la plataforma.
 Es necesario tener en cuenta que la habilitación puede tomar un lapso de tiempo, hoy en día es casi de forma automática, pero esto podría tomar en algunos casos entre 1 a 2 días.
 
-![](https://user-images.githubusercontent.com/23284899/258846473-981e1659-82cc-477c-93c2-bbf1cf89ee1f.png)
+<img src="https://user-images.githubusercontent.com/23284899/258846473-981e1659-82cc-477c-93c2-bbf1cf89ee1f.png" width='100%'/>
 
 
 ## Confirmación de Earth Engine
@@ -37,9 +37,20 @@ Con este correo de bienvenida de Earth Engine, podemos estár al 100% seguro de 
  - Earth Engine Developer Docs
  - Eartg Engine Explore
 
-![](https://user-images.githubusercontent.com/23284899/258848622-c362d3ca-bb81-419c-b273-2fa4be01f44f.png)
+<img src="https://user-images.githubusercontent.com/23284899/258848622-c362d3ca-bb81-419c-b273-2fa4be01f44f.png" width='100%'/>
 
 
+## Creación de un proyecto Cloud 
+Para poder usar Google Earth Engine es necesario crear un proyecto en Google Cloud Platform (GCP), esto es relativamente fácil y requiere que inicie sesión en la consola [GCS](https://console.cloud.google.com/), haga clic en el menú desplegable de proyectos y haga clic en “Nuevo proyecto”. El proyecto se crea en unos segundos.
+
+{{< video https://gitlab.com/uploads/-/system/personal_snippet/3599361/11bb570a8164a2714d8d3bae314728f4/creacion-proyecto.mp4 >}}
+
+
+## Habilitación de la API de Google Earth Engine en su cuenta personal
+Para asegurarse de que su proyecto Google Cloud recién creado es compatible con GEE, deberá habilitar la API de Earth Engine. Para hacer esto, navegue a la sección **API y Servicios** en su cuenta de Google Cloud y haga clic en **API y servicios habilitados**. 
+A partir de ahí, haga clic en **"Habilitar API"**  y busque **Earth Engine**. Una vez que lo haya localizado, habilite la API, tenga en cuenta que los cambios pueden tardar unos minutos en propagarse.
+
+{{< video https://gitlab.com/uploads/-/system/personal_snippet/3599361/87a78f2a8ec23e5dd48b19d9a9c1c3f2/activacion_api.mp4 >}}
 
 ::: {.callout-caution appearance=minimal}
 
@@ -60,10 +71,26 @@ library(cloudml)
 gcloud_install()
 ```
 
+<img src='https://gitlab.com/uploads/-/system/personal_snippet/3599361/6a0c19b09d90bc1910d8802619c140c0/01.png' width='100%'/>
+
 ## Registro de crendenciales
+
+{{< video https://gitlab.com/uploads/-/system/personal_snippet/3599361/7664d0d156cda198591e3f30c30a2ab9/cligcloud.mp4 >}}
+
+
+Antes de emplear `rgee` es necesario crear una carpeta raiz en el mismo editor de google earth engine.
+
+<img src='https://gitlab.com/uploads/-/system/personal_snippet/3599361/705a3ce8206b166a24942d8eacfc812e/02.png' width='100%'>
 
 ## Configuración de rgee 
 
-
+```{r}
+#| warning: false
+library(rgee)
+ee_Initialize(user = "barja.geografo@gmail.com", drive = TRUE)
+```
 ## Hola mundo en rgee
 
+```{r}
+ee$String('Hola mundo espacial🌎🚀')$getInfo()
+```
