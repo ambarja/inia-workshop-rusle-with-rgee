@@ -246,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de agosto de 2023</p>
+      <p class="date-modified">7 de septiembre de 2023</p>
     </div>
   </div>
     
@@ -378,7 +378,7 @@ Atención:
 <p>Este proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de paquetes a instalar</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"tidyterra"</span>,<span class="st">"rgee"</span> ,<span class="st">"tmap"</span>, <span class="st">"gifski"</span>, <span class="st">"cloudml"</span>, <span class="st">"sf"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"tidyterra"</span>,<span class="st">"remotes"</span> ,<span class="st">"tmap"</span>, <span class="st">"gifski"</span>, <span class="st">"cloudml"</span>, <span class="st">"sf"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(pkgs = pkgs, dependencies = TRUE)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Se recomienda instalar la versión de GitHub de rgee</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -395,11 +395,41 @@ Atención:
 </div>
 <pre><code>El paquete tidyverse está instalado y cargado correctamente.
 El paquete tidyterra está instalado y cargado correctamente.
-El paquete rgee está instalado y cargado correctamente.
+El paquete remotes está instalado y cargado correctamente.
 El paquete tmap está instalado y cargado correctamente.
 El paquete gifski está instalado y cargado correctamente.
 El paquete cloudml está instalado y cargado correctamente.
 El paquete sf está instalado y cargado correctamente</code></pre>
+<p>El paquete de <code>rgee</code> actualmente presenta algunos incovenientes con la versión de CRAN, especialmente para los sistemas operativos de <strong>Windows</strong>, se recomienda instalar la versión de desarrollo la cual está alojada en GitHub. Para su correcta instalación se recomienda seguir cualquiera de las siguientes alternativas mostradas 👇</p>
+
+<table>
+<tbody><tr align="center">
+<th>
+Forma explítica
+</th>
+<th>
+Forma implítica
+</th>
+</tr>
+<tr>
+<td>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">'r-spatial/rgee'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('remotes')</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'r-spatial/rgee'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</td>
+</tr>
+
+</tbody></table>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-earthengine/rgeeExtra"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Skipping install of 'rgeeExtra' from a github remote, the SHA1 (887d78ac) has not changed since last install.
+  Use `force = TRUE` to force installation</code></pre>
+</div>
+</div>
 
 
 </section>

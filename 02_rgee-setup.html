@@ -77,6 +77,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -216,10 +218,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#registro-de-gmail" id="toc-registro-de-gmail" class="nav-link active" data-scroll-target="#registro-de-gmail"><span class="header-section-number">2.1</span> Registro de GMAIL</a></li>
   <li><a href="#confirmación-de-earth-engine" id="toc-confirmación-de-earth-engine" class="nav-link" data-scroll-target="#confirmación-de-earth-engine"><span class="header-section-number">2.2</span> Confirmación de Earth Engine</a></li>
-  <li><a href="#configuración-de-gcloudcli" id="toc-configuración-de-gcloudcli" class="nav-link" data-scroll-target="#configuración-de-gcloudcli"><span class="header-section-number">2.3</span> Configuración de GCloudCLI</a></li>
-  <li><a href="#registro-de-crendenciales" id="toc-registro-de-crendenciales" class="nav-link" data-scroll-target="#registro-de-crendenciales"><span class="header-section-number">2.4</span> Registro de crendenciales</a></li>
-  <li><a href="#configuración-de-rgee" id="toc-configuración-de-rgee" class="nav-link" data-scroll-target="#configuración-de-rgee"><span class="header-section-number">2.5</span> Configuración de rgee</a></li>
-  <li><a href="#hola-mundo-en-rgee" id="toc-hola-mundo-en-rgee" class="nav-link" data-scroll-target="#hola-mundo-en-rgee"><span class="header-section-number">2.6</span> Hola mundo en rgee</a></li>
+  <li><a href="#creación-de-un-proyecto-cloud" id="toc-creación-de-un-proyecto-cloud" class="nav-link" data-scroll-target="#creación-de-un-proyecto-cloud"><span class="header-section-number">2.3</span> Creación de un proyecto Cloud</a></li>
+  <li><a href="#habilitación-de-la-api-de-google-earth-engine-en-su-cuenta-personal" id="toc-habilitación-de-la-api-de-google-earth-engine-en-su-cuenta-personal" class="nav-link" data-scroll-target="#habilitación-de-la-api-de-google-earth-engine-en-su-cuenta-personal"><span class="header-section-number">2.4</span> Habilitación de la API de Google Earth Engine en su cuenta personal</a></li>
+  <li><a href="#configuración-de-gcloudcli" id="toc-configuración-de-gcloudcli" class="nav-link" data-scroll-target="#configuración-de-gcloudcli"><span class="header-section-number">2.5</span> Configuración de GCloudCLI</a></li>
+  <li><a href="#registro-de-crendenciales" id="toc-registro-de-crendenciales" class="nav-link" data-scroll-target="#registro-de-crendenciales"><span class="header-section-number">2.6</span> Registro de crendenciales</a></li>
+  <li><a href="#configuración-de-rgee" id="toc-configuración-de-rgee" class="nav-link" data-scroll-target="#configuración-de-rgee"><span class="header-section-number">2.7</span> Configuración de rgee</a></li>
+  <li><a href="#hola-mundo-en-rgee" id="toc-hola-mundo-en-rgee" class="nav-link" data-scroll-target="#hola-mundo-en-rgee"><span class="header-section-number">2.8</span> Hola mundo en rgee</a></li>
   </ul>
 </nav>
     </div>
@@ -246,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de agosto de 2023</p>
+      <p class="date-modified">17 de septiembre de 2023</p>
     </div>
   </div>
     
@@ -281,6 +285,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Eartg Engine Explore</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/23284899/258848622-c362d3ca-bb81-419c-b273-2fa4be01f44f.png" width="100%"></p>
+</section>
+<section id="creación-de-un-proyecto-cloud" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="creación-de-un-proyecto-cloud"><span class="header-section-number">2.3</span> Creación de un proyecto Cloud</h2>
+<p>Para poder usar Google Earth Engine es necesario crear un proyecto en Google Cloud Platform (GCP), esto es relativamente fácil y requiere que inicie sesión en la consola <a href="https://console.cloud.google.com/">GCS</a>, haga clic en el menú desplegable de proyectos y haga clic en “Nuevo proyecto”. El proyecto se crea en unos segundos.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://gitlab.com/uploads/-/system/personal_snippet/3599361/11bb570a8164a2714d8d3bae314728f4/creacion-proyecto.mp4"></video></div>
+</section>
+<section id="habilitación-de-la-api-de-google-earth-engine-en-su-cuenta-personal" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="habilitación-de-la-api-de-google-earth-engine-en-su-cuenta-personal"><span class="header-section-number">2.4</span> Habilitación de la API de Google Earth Engine en su cuenta personal</h2>
+<p>Para asegurarse de que su proyecto Google Cloud recién creado es compatible con GEE, deberá habilitar la API de Earth Engine. Para hacer esto, navegue a la sección <strong>API y Servicios</strong> en su cuenta de Google Cloud y haga clic en <strong>API y servicios habilitados</strong>. A partir de ahí, haga clic en <strong>“Habilitar API”</strong> y busque <strong>Earth Engine</strong>. Una vez que lo haya localizado, habilite la API, tenga en cuenta que los cambios pueden tardar unos minutos en propagarse.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://gitlab.com/uploads/-/system/personal_snippet/3599361/87a78f2a8ec23e5dd48b19d9a9c1c3f2/activacion_api.mp4"></video></div>
 <div class="callout callout-style-simple callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -295,8 +309,8 @@ Observacón:
 </div>
 </div>
 </section>
-<section id="configuración-de-gcloudcli" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="configuración-de-gcloudcli"><span class="header-section-number">2.3</span> Configuración de GCloudCLI</h2>
+<section id="configuración-de-gcloudcli" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="configuración-de-gcloudcli"><span class="header-section-number">2.5</span> Configuración de GCloudCLI</h2>
 <p>Para poder vincular Google Earth Engine con R, es necesario contalar con la instalación de GCloud CLI, para instalar este software desde R solo necesitamos cargar la librería <code>cloudml</code> y utilizar el siguiente comando <code>gcloud_install()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activación o llamado de los paquetes instalados</span></span>
@@ -304,15 +318,40 @@ Observacón:
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalación de GCloud CLI</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gcloud_install</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img src="https://gitlab.com/uploads/-/system/personal_snippet/3599361/6a0c19b09d90bc1910d8802619c140c0/01.png" width="100%"></p>
 </section>
-<section id="registro-de-crendenciales" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="registro-de-crendenciales"><span class="header-section-number">2.4</span> Registro de crendenciales</h2>
+<section id="registro-de-crendenciales" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="registro-de-crendenciales"><span class="header-section-number">2.6</span> Registro de crendenciales</h2>
+<div class="quarto-video"><video id="video_shortcode_videojs_video3" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://gitlab.com/uploads/-/system/personal_snippet/3599361/7664d0d156cda198591e3f30c30a2ab9/cligcloud.mp4"></video></div>
+<p>Antes de emplear <code>rgee</code> es necesario crear una carpeta raiz en el mismo editor de google earth engine.</p>
+<p><img src="https://gitlab.com/uploads/-/system/personal_snippet/3599361/705a3ce8206b166a24942d8eacfc812e/02.png" width="100%"></p>
 </section>
-<section id="configuración-de-rgee" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="configuración-de-rgee"><span class="header-section-number">2.5</span> Configuración de rgee</h2>
+<section id="configuración-de-rgee" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="configuración-de-rgee"><span class="header-section-number">2.7</span> Configuración de rgee</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgee)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ee_Initialize</span>(<span class="at">user =</span> <span class="st">"barja.geografo@gmail.com"</span>, <span class="at">drive =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>── rgee 1.1.6.9999 ────────────────────────────────── earthengine-api 0.1.369 ── 
+ ✔ user: barja.geografo@gmail.com 
+ ✔ Google Drive credentials:
+ ✔ Google Drive credentials:  FOUND
+ ✔ Initializing Google Earth Engine:
+ ✔ Initializing Google Earth Engine:  DONE!
+
+ ✔ Earth Engine account: users/labsaf 
+──────────────────────────────────────────────────────────────────────────────── </code></pre>
+</div>
+</div>
 </section>
-<section id="hola-mundo-en-rgee" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="hola-mundo-en-rgee"><span class="header-section-number">2.6</span> Hola mundo en rgee</h2>
+<section id="hola-mundo-en-rgee" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="hola-mundo-en-rgee"><span class="header-section-number">2.8</span> Hola mundo en rgee</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ee<span class="sc">$</span><span class="fu">String</span>(<span class="st">'Hola mundo espacial🌎🚀'</span>)<span class="sc">$</span><span class="fu">getInfo</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hola mundo espacial🌎🚀"</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -679,6 +718,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>videojs(video_shortcode_videojs_video2);</script>
+<script>videojs(video_shortcode_videojs_video3);</script>
 
 
 

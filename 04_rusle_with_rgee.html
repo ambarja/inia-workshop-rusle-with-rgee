@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -63,6 +97,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -176,7 +214,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#factor-k" id="toc-factor-k" class="nav-link active" data-scroll-target="#factor-k"><span class="header-section-number">4.1</span> Factor K</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -201,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de agosto de 2023</p>
+      <p class="date-modified">7 de septiembre de 2023</p>
     </div>
   </div>
     
@@ -210,8 +254,66 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>En el siguente diagrama se muestra el flujo de trabajo para realizar el cálculo del mapa de erosión.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+A[Mapeo de erosión del suelo] 
+
+A --&gt; B[Propiedades físicas del suelo]
+A --&gt; C[Precipitación]
+A --&gt; D[Elevación]
+A --&gt; E[Índice de vegetación]
+A --&gt; F[Conservación del suelo]
+
+D --&gt; G[Acumulación de flujo]
+D --&gt; H[Pendiente]
+
+B --&gt; I[Factor K]
+C --&gt; J[Factor R]
+G --&gt; K[Factor LS]
+H --&gt; K[Factor LS]
+
+E --&gt; L[Factor C]
+F --&gt; M[Factor P]
+
+I --&gt; N[Erosión del suelo]
+J --&gt; N[Erosión del suelo]
+K --&gt; N[Erosión del suelo]
+L --&gt; N[Erosión del suelo]
+M --&gt; N[Erosión del suelo]
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<section id="factor-k" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="factor-k"><span class="header-section-number">4.1</span> Factor K</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nngeo)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ee_Initialize</span>(<span class="at">user =</span> <span class="st">"geografo.pe@gmail.com"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>peru_ee <span class="ot">&lt;-</span> map_EP <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    st_remove_hole <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sf_as_ee</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    Map<span class="sc">$</span><span class="fu">addLayer</span>()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Factor K </span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Par&lt;- el cálculo del factor K se tomo encuenta el dataset actualizado de soilgrid v2.0 </span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>clay <span class="ot">&lt;-</span> ee<span class="sc">$</span><span class="fu">Image</span>(<span class="st">"projects/soilgrids-isric/clay_mean"</span>)<span class="sc">$</span><span class="fu">multiply</span>(<span class="dv">10</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>sand <span class="ot">&lt;-</span> ee<span class="sc">$</span><span class="fu">Image</span>(<span class="st">"projects/soilgrids-isric/sand_mean"</span>)<span class="sc">$</span><span class="fu">multiply</span>(<span class="dv">10</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>silt <span class="ot">&lt;-</span> ee<span class="sc">$</span><span class="fu">Image</span>(<span class="st">"projects/soilgrids-isric/silt_mean"</span>)<span class="sc">$</span><span class="fu">multiply</span>(<span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

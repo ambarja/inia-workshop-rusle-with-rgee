@@ -64,8 +64,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -184,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#definición-de-parámetros" id="toc-definición-de-parámetros" class="nav-link active" data-scroll-target="#definición-de-parámetros"><span class="header-section-number">3.1</span> Definición de parámetros</a>
   <ul class="collapse">
-  <li><a href="#factor-r" id="toc-factor-r" class="nav-link" data-scroll-target="#factor-r"><span class="header-section-number">3.1.1</span> Factor R 🌧️</a></li>
+  <li><a href="#factor-r" id="toc-factor-r" class="nav-link" data-scroll-target="#factor-r"><span class="header-section-number">3.1.1</span> Factor R</a></li>
   <li><a href="#factor-k" id="toc-factor-k" class="nav-link" data-scroll-target="#factor-k"><span class="header-section-number">3.1.2</span> Factor K</a></li>
   <li><a href="#factor-ls" id="toc-factor-ls" class="nav-link" data-scroll-target="#factor-ls"><span class="header-section-number">3.1.3</span> Factor LS</a></li>
   <li><a href="#factor-c" id="toc-factor-c" class="nav-link" data-scroll-target="#factor-c"><span class="header-section-number">3.1.4</span> Factor C</a></li>
@@ -216,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de agosto de 2023</p>
+      <p class="date-modified">7 de septiembre de 2023</p>
     </div>
   </div>
     
@@ -226,32 +240,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Metodología desarrollada por Renard et al (1991) que permite estimar la perdida media anual de suelo en función a un modelo matemático.</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\begin{equation}
     A = R \cdot K \cdot LS \cdot C \cdot P
-\end{equation}\]</span></p>
+\end{equation}</span></p>
 <p>Donde los cinco parámetros de entrada están relacionados con la precipitación, las características del suelo, la topografía, el manejo de la cubierta y los cultivos y las prácticas de conservación.</p>
 <section id="definición-de-parámetros" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="definición-de-parámetros"><span class="header-section-number">3.1</span> Definición de parámetros</h2>
 <section id="factor-r" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="factor-r"><span class="header-section-number">3.1.1</span> Factor R 🌧️</h3>
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="factor-r"><span class="header-section-number">3.1.1</span> Factor R</h3>
 <p>Es el factor de erosividad de escorrentía de lluvia (MJ·mm·ha−1·h−1·Año−1), índice numérico que expresa la capacidad de la lluvia para erosionar el suelo. Para su cálculo existen diferentes modelos; sin embargo para este manual se consideró usar la formula de Wischmeier y Smith (1978) presentada el paper de <a href="">Zubairul Isla</a> la cual la base de referencia.</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\begin{equation}
     R = 1.73 \times 10^{(1.5\times\log(Pm^2/Pa)-0.08188)}   
-\end{equation}\]</span></p>
+\end{equation}</span></p>
 <p>Donde:</p>
 <ul>
-<li>R es la erosividad de lluvia en <span class="math inline">\((MJ\)</span> en <span class="math inline">\(mm)/(ha^{-1} h^{-1} año^{-1})\)</span> (mega julios por milímetro por hectárea por hora por año)</li>
+<li>R es la erosividad de lluvia en <span class="math inline">(MJ</span> en <span class="math inline">mm)/(ha^{-1} h^{-1} año^{-1})</span> (mega julios por milímetro por hectárea por hora por año)</li>
 <li>Pm es la precipitación mensual</li>
 <li>Pa es la precipitación en un año</li>
 </ul>
 </section>
 <section id="factor-k" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="factor-k"><span class="header-section-number">3.1.2</span> Factor K</h3>
-<p>Es el factor de erodibilidad del suelo <span class="math inline">\((Mg·h·MJ^{−1}·mm^{−1})\)</span>, una descripción numérica de la susceptibilidad de las partículas del suelo a la erosión hídrica. Estos valores van de 0 a 1, donde 0 es menos suceptible y 1 es altamente susceptible a la erosión hídrica.</p>
+<p>Es el factor de erodibilidad del suelo <span class="math inline">(Mg·h·MJ^{−1}·mm^{−1})</span>, una descripción numérica de la susceptibilidad de las partículas del suelo a la erosión hídrica. Estos valores van de 0 a 1, donde 0 es menos suceptible y 1 es altamente susceptible a la erosión hídrica.</p>
 <p>Para su cálculo se tomo como referencia la formula de Sharpley and Williams (1990).</p>
-<p><span class="math display">\[\begin{equation}
-    K = [0.2 + 0.3 \times exp(-0.0256 \times SAN \times (1 - \frac{SIL}{100}))]\times[1-\frac{0.25\times CLA}{CLA + exp(3.72 - 2.95\times CLA)}]  
-\end{equation}\]</span></p>
+<p><span class="math display">\begin{equation}
+K = [0.2 + 0.3 \times exp(-0.0256 \times SAN \times (1 - \frac{SIL}{100}))]\times[1-\frac{0.25\times CLA}{CLA + exp(3.72 - 2.95\times CLA)}]  
+\end{equation}</span></p>
 <p>Donde:</p>
 <ul>
 <li><p>SAN: Porcentaje de arena</p></li>
@@ -263,28 +277,28 @@ ul.task-list li input[type="checkbox"] {
 <section id="factor-ls" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="factor-ls"><span class="header-section-number">3.1.3</span> Factor LS</h3>
 <p>Es el factor de longitud de pendiente (L) y el factor de inclinación (S), ambos variables combinadas expresan el efecto de la topografía local sobre la tasa dde erosión del suelo. Para su cálculo se tomo en cuenta la formula establecida por Moore (1985).</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\begin{equation}
     LS = (0.4 + 1) \times (Flowacc\times CellSize /22.13)^{0.4} \times (\sin(\theta)/0.0896)^{1.3}
-\end{equation}\]</span></p>
+\end{equation}</span></p>
 <p>Donde:</p>
 <ul>
 <li><p>Flowacc : Acumulación de flujo</p></li>
 <li><p>CellSize: Tamaño de pixel</p></li>
-<li><p><span class="math inline">\(\theta\)</span> : Mapa de pendientes en grados</p></li>
+<li><p><span class="math inline">\theta</span> : Mapa de pendientes en grados</p></li>
 </ul>
 </section>
 <section id="factor-c" class="level3" data-number="3.1.4">
 <h3 data-number="3.1.4" class="anchored" data-anchor-id="factor-c"><span class="header-section-number">3.1.4</span> Factor C</h3>
 <p>Determina la eficacia relativa de los sistemas de manejo del suelo y de los cultivos en terminos de prevencion o reduccion de la perdida de suelo. Los valores oscila entre 0, para una superficie no erosible, y 1, parcela desnuda (sin vegetación). Por temas práticos muchos autores adoptan enfoques simplificados: por ejemplo, utilizar el mapas de cobertura del suelo y asignando un factor C a cada clase, o por ultima emplear los valores de NDVI y las condiciones climáticas.</p>
 <p>Para su cálculo se tomo como referencia la formula de Almagro et al (2019).</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\begin{equation}
     C = 0.1 \times(\frac{-NDVI + 1}{2})
-\end{equation}\]</span></p>
+\end{equation}</span></p>
 <p>Donde:</p>
 <ul>
 <li><p>Flowacc : Acumulación de flujo</p></li>
 <li><p>CellSize: Tamaño de pixel</p></li>
-<li><p><span class="math inline">\(\theta\)</span> : Mapa de pendientes en grados</p></li>
+<li><p><span class="math inline">\theta</span> : Mapa de pendientes en grados</p></li>
 </ul>
 </section>
 <section id="factor-p" class="level3" data-number="3.1.5">
