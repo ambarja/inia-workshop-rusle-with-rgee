@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 1&nbsp; Aspectos generales e instalación de software</title>
+<title>Mapeo de Erosión del Suelo empleando la Metodología de RUSLE con rgee📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️ - 1&nbsp; Aspectos generales e instalación de software</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Mapeo de Erosión del Suelo a Nivel Nacional empleando la Metodología de RUSLE y rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br></a> 
+      <a href="./">Mapeo de Erosión del Suelo empleando la Metodología de RUSLE con rgee<br>📚🏞️🌱🌧️🚜🔎📉💨🌾🗺️<br></a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://ambarja.github.io/inia-workshop-rusle-with-rgee/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-git"></i></a>
     <div class="dropdown">
@@ -192,18 +192,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RUSLE con rgee</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Referencias</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -246,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de septiembre de 2023</p>
+      <p class="date-modified">17 de septiembre de 2023</p>
     </div>
   </div>
     
@@ -305,7 +293,7 @@ Atención:
 <p>Un paquete en R es una colección organizada de funciones, datos y documentación que se agrupa para resolver un conjunto particular de problemas (<strong>Hadley Wickham, 2021</strong>).</p>
 <p>Estos son los paquetes que se utilizará durante todo flujo de trabajo 👇</p>
 <div class="grid">
-<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="g-col-12 g-col-md-6 col-lg-2">
 <style>
     .card {background-color:#ffffff26;}
 </style>
@@ -315,57 +303,37 @@ Atención:
     <h5 class="card-title anchored">{tidyverse}</h5>
     <div align="center"><img src="https://soka.gitlab.io/blog/post/2019-10-06-r-tidyverse-intro/images/hex-tidyverse.png" width="100px" align="center"></div>
     <p class="card-text">Paquete que te permite hacer ciencia de datos.</p>
-    <a href="https://www.tidyverse.org/" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://www.tidyverse.org/" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 </div>
-<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="g-col-12 g-col-md-6 col-lg-2">
 <div class="card">
   <div class="card-body">
     <h5 class="card-title anchored">{tidyterra}</h5>
     <div align="center"><img src="https://dieghernan.github.io/tidyterra/logo.png" width="100px" align="center"></div>
     <p class="card-text">Paquete que te permite manipular datos raster.</p>
-    <a href="https://dieghernan.github.io/tidyterra/articles/tidyterra.html" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://dieghernan.github.io/tidyterra/articles/tidyterra.html" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 </div>
-<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="g-col-12 g-col-md-6 col-lg-2">
 <div class="card">
   <div class="card-body">
     <h5 class="card-title anchored">{cloudml}</h5>
     <div align="center"><img src="https://raw.githubusercontent.com/rstudio/cloudml/main/vignettes/images/cloudml.png" width="115px" align="center"></div>
     <p class="card-text">Paquete que te permite instalar y utilizar GCloud CLI.</p>
-    <a href="https://tensorflow.rstudio.com/reference/cloudml/" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://tensorflow.rstudio.com/reference/cloudml/" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 </div>
-<div class="g-col-12 g-col-md-4 col-lg-4">
+<div class="g-col-12 g-col-md-6 col-lg-4">
 <div class="card">
   <div class="card-body">
     <h5 class="card-title anchored">{rgee}</h5>
     <div align="center"><img src="https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png" width="100px" align="center"></div>
     <p class="card-text">Paquete que integrar Google Earth Engine con R.</p>
-    <a href="https://r-spatial.github.io/rgee/" class="btn btn-dark">Más información,clic aquí</a>
-  </div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4 col-lg-4">
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title anchored">{tmap}</h5>
-    <div align="center"><img src="https://user-images.githubusercontent.com/3457131/78889077-49661800-7a63-11ea-95b6-31db1ce6815c.png" width="100px" align="center"></div>
-    <p class="card-text">Paquete para generar mapas temáticos.</p>
-    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
-  </div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4 col-lg-4">
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title anchored">{gifski}</h5>
-    <div align="center"><img src="https://user-images.githubusercontent.com/23284899/258276611-89116f95-dd02-45c4-9ee5-c6df413f1484.png" width="100px" align="center"></div>
-    <p class="card-text">Paquete que te permite realizar gif de forma sencilla.</p>
-    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://r-spatial.github.io/rgee/" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 </div>
@@ -378,7 +346,7 @@ Atención:
 <p>Este proceso solo se realizar una única vez, cuando ya tienes instalado y configurado todos los paquetes solo es necesario activarlos en tu sistema.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de paquetes a instalar</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"tidyterra"</span>,<span class="st">"remotes"</span> ,<span class="st">"tmap"</span>, <span class="st">"gifski"</span>, <span class="st">"cloudml"</span>, <span class="st">"sf"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"tidyterra"</span>,<span class="st">"remotes"</span>,<span class="st">"cloudml"</span>, <span class="st">"sf"</span>, <span class="st">"cptcity"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(pkgs = pkgs, dependencies = TRUE)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Se recomienda instalar la versión de GitHub de rgee</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -396,10 +364,9 @@ Atención:
 <pre><code>El paquete tidyverse está instalado y cargado correctamente.
 El paquete tidyterra está instalado y cargado correctamente.
 El paquete remotes está instalado y cargado correctamente.
-El paquete tmap está instalado y cargado correctamente.
-El paquete gifski está instalado y cargado correctamente.
 El paquete cloudml está instalado y cargado correctamente.
-El paquete sf está instalado y cargado correctamente</code></pre>
+El paquete sf está instalado y cargado correctamente.
+El paquete cptcity está instalado y cargado correctamente.</code></pre>
 <p>El paquete de <code>rgee</code> actualmente presenta algunos incovenientes con la versión de CRAN, especialmente para los sistemas operativos de <strong>Windows</strong>, se recomienda instalar la versión de desarrollo la cual está alojada en GitHub. Para su correcta instalación se recomienda seguir cualquiera de las siguientes alternativas mostradas 👇</p>
 
 <table>
@@ -426,7 +393,7 @@ Forma implítica
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-earthengine/rgeeExtra"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Skipping install of 'rgeeExtra' from a github remote, the SHA1 (887d78ac) has not changed since last install.
+<pre><code>Skipping install of 'rgeeExtra' from a github remote, the SHA1 (79fde841) has not changed since last install.
   Use `force = TRUE` to force installation</code></pre>
 </div>
 </div>
