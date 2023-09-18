@@ -116,7 +116,7 @@
     "href": "04_rusle_with_rgee.html#activación-de-librerías",
     "title": "4  RUSLE con rgee",
     "section": "4.1 Activación de librerías",
-    "text": "4.1 Activación de librerías\n\nlibrary(rgee)\nlibrary(sf)\nlibrary(tidyverse)\nlibrary(nngeo)\nlibrary(mapsPERU)\nlibrary(cptcity)\nee_Initialize(user = 'barja.geografo@gmail.com')\n\n── rgee 1.1.7 ─────────────────────────────────────── earthengine-api 0.1.369 ── \n ✔ user: barja.geografo@gmail.com \n ✔ Initializing Google Earth Engine:\n ✔ Initializing Google Earth Engine:  DONE!\n\n ✔ Earth Engine account: users/labsaf \n\n ✔ Python Path: C:/Users/anton/AppData/Local/r-miniconda/envs/rgee/python.exe \n────────────────────────────────────────────────────────────────────────────────"
+    "text": "4.1 Activación de librerías\n\nlibrary(rgee)\nlibrary(sf)\nlibrary(tidyverse)\nlibrary(nngeo)\nlibrary(mapsPERU)\nlibrary(cptcity)\nee_Initialize(user = \"barja.geografo@gmail.com\")\n\n── rgee 1.1.7 ─────────────────────────────────────── earthengine-api 0.1.369 ── \n ✔ user: barja.geografo@gmail.com \n ✔ Initializing Google Earth Engine:\n ✔ Initializing Google Earth Engine:  DONE!\n\n ✔ Earth Engine account: users/labsaf \n\n ✔ Python Path: C:/Users/anton/AppData/Local/r-miniconda/envs/rgee/python.exe \n────────────────────────────────────────────────────────────────────────────────"
   },
   {
     "objectID": "04_rusle_with_rgee.html#lectura-del-ámbito-de-estudio",
