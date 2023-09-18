@@ -1,6 +1,6 @@
 ## ¿Qué es RUSLE?
 
-Metodología desarrollada por Renard et al (1991) que permite estimar la perdida media anual de suelo en función a un modelo matemático.
+Metodología desarrollada por **Renard et al (1991)** que permite estimar la perdida media anual de suelo en función a un modelo matemático.
 
 \begin{equation}
     A = R \cdot K \cdot LS \cdot C \cdot P 
@@ -13,7 +13,7 @@ Donde los cinco parámetros de entrada están relacionados con la precipitación
 ### Factor R
 
 Es el factor de erosividad de escorrentía de lluvia (MJ·mm·ha−1·h−1·Año−1), índice numérico que expresa la capacidad de la lluvia para erosionar el suelo.
-Para su cálculo existen diferentes modelos; sin embargo para este manual se consideró usar la formula de Wischmeier y Smith (1978) presentada el paper de [Zubairul Isla]() la cual la base de referencia.  
+Para su cálculo existen diferentes modelos; sin embargo para este manual se consideró usar la formula de **Wischmeier y Smith (1978)**.
 
 \begin{equation}
     R = 1.73 \times 10^{(1.5\times\log(Pm^2/Pa)-0.08188)}   
@@ -28,27 +28,45 @@ Donde:
 ### Factor K
 Es el factor de erodibilidad del suelo $(Mg·h·MJ^{−1}·mm^{−1})$, una descripción numérica de la susceptibilidad de las partículas del suelo a la erosión hídrica. Estos valores van de 0 a 1, donde 0 es menos suceptible y 1 es altamente susceptible a la erosión hídrica.
 
-Para su cálculo se tomo como referencia la formula de Sharpley and Williams (1990).
+Para su cálculo se tomo como referencia la formula de Sharpley and **Williams (1983)**.
 
 \begin{equation}
-K = [0.2 + 0.3 \times exp(-0.0256 \times SAN \times (1 - \frac{SIL}{100}))]\times[1-\frac{0.25\times CLA}{CLA + exp(3.72 - 2.95\times CLA)}]  
+K = f_{Csand} \cdot f_{Cl-syo} \cdot f_{org} \cdot f_{hyosunnd}  
 \end{equation}
 
 Donde: 
 
-- SAN: Porcentaje de arena
- 
-- SIL: Porcentaje de limo
- 
-- CLA: Porcentaje de arcilla
+- $f_{Csand}$ : Factor que reduce el indicador K en suelos con una alta proporción de contenido de arena gruesa y mayor para suelos con poca arena.
 
-- SN: 1 - SAN/100
+$$ 
+f_{Csand} = \left(0.2 + 0.3 \cdot e^{-0.256 \cdot m_s \cdot (1 + m_silt/100)}\right)
+$$
 
+
+- $f_{Cl-syo}$: Factores de erodibilidad bajos del suelo para suelos con una alta relación arcilla / limo.
+
+$$ 
+f_{Cl-syo} = (m_{siltmc} + m_{silt})^{0.3}
+$$
+
+
+- $f_{org}$: Factor que reduce los valores de K en suelos con un alto contenido de carbono orgánico. 
+
+
+$$
+f_{orgC} = \left(1.0 + 0.256 \cdot \frac{{orgC}}{{orgC + e^{3.72 - 2.95 \cdot orgC}}}\right)
+$$
+
+- $f_{hyosand}$: Factor que reduce el valor K de las clases de suelo con alto contenido de arena. 
+
+$$
+f_{hyosunnd} = \left(1.0 + 0.7 \cdot (1 - \frac{m_s}{100}) \cdot (1 - \frac{m_s}{100}) + e^{5.51 + 22.9 \cdot (1 - \frac{m_s}{100})}\right)
+$$
 
 ### Factor LS
 
 Es el factor de longitud de pendiente (L) y el factor de inclinación (S), ambos variables combinadas expresan el efecto de la topografía local sobre la tasa dde erosión del suelo.
-Para su cálculo se tomo en cuenta la formula establecida por Moore (1985).
+Para su cálculo se tomo en cuenta la formula establecida por **Moore (1985)**.
 
 \begin{equation}
     LS = (0.4 + 1) \times (Flowacc\times CellSize /22.13)^{0.4} \times (\sin(\theta)/0.0896)^{1.3} 
@@ -68,7 +86,7 @@ Donde:
 Determina la eficacia relativa de los sistemas de manejo del suelo y de los cultivos en terminos de prevencion o reduccion de la perdida de suelo. 
 Los valores oscila entre 0, para una superficie no erosible, y 1, parcela desnuda (sin vegetación). Por temas práticos muchos autores adoptan enfoques simplificados: por ejemplo, utilizar el mapas de cobertura del suelo y asignando un factor C a cada clase, o por ultima emplear los valores de NDVI y las condiciones climáticas.
 
-Para su cálculo se tomo como referencia la formula de Almagro et al (2019).
+Para su cálculo se tomo como referencia la formula de **Almagro et al (2019)**.
 
 \begin{equation}
     C = 0.1 \times(\frac{-NDVI + 1}{2})
@@ -85,22 +103,5 @@ Donde:
 
 ### Factor P
 
-Recoge la influencia que tienen las prácticas de conservación de suelos sobre las tasas de erosión, en otras palabras el factor P tiene como objetivo reducir la escorrentía del agua y, en consecuencia, la pérdida de suelo.
-
-Para su cálculo se tomo en consideración la tabla de valores propuestos por , donde se establece lo siguienente:
-
-
-| Clasificación de Usos de Suelo | P |
-|--------------------------------|---|
-| Bosque | 0.8|
-| Tierras de cultivo | 0.5 |
-| Construcción | 1.0|
-| Vegetación esparcida | 1.0|
-| Cuerpos de agua | 1.0|
-| Matorral | 1.0 |
-| Humedales | 1.0
-
-
-
-
-https://www.frontiersin.org/articles/10.3389/fenvs.2023.1136243/full
+Recoge la influencia que tienen las prácticas de conservación de suelos sobre las tasas de erosión, en otras palabras el factor P tiene como objetivo reducir la escorrentía del agua y, en consecuencia, la pérdida de suelo. Existen diferentes clasificaciones de pesos según el tipo de cobertura presente en el ámbito de estudio, como se observa en los trabajos de **Mekonnen, E. et al. (2023)** y **Mashes, C. S. et al. (2023)**
+Sin embargo; la ecuación RUSLE ejecutó un factor P igual a 1 para reflejar la erosión potencial bajo las condiciones actuales de ninguna práctica estructural de conservación de suelos. Por este mismo sustento el presente manual toma el mismo criterio.

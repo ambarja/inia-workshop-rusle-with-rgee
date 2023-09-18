@@ -51,7 +51,8 @@ Un paquete en R es una colección organizada de funciones, datos y documentació
 Estos son los paquetes que se utilizará durante todo flujo de trabajo 👇
 
 ::: {.grid}
-::: {.g-col-12 .g-col-md-4 .col-lg-4}
+
+::: {.g-col-12 .g-col-md-6 .col-lg-2}
 ```{=html}
 <style>
     .card {background-color:#ffffff26;}
@@ -62,71 +63,46 @@ Estos son los paquetes que se utilizará durante todo flujo de trabajo 👇
     <h5 class="card-title">{tidyverse}</h5>
     <div align='center'><img src='https://soka.gitlab.io/blog/post/2019-10-06-r-tidyverse-intro/images/hex-tidyverse.png' width='100px'align='center'></div>
     <p class="card-text">Paquete que te permite hacer ciencia de datos.</p>
-    <a href="https://www.tidyverse.org/" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://www.tidyverse.org/" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 ```
 :::
 
-::: {.g-col-12 .g-col-md-4 .col-lg-4}
+::: {.g-col-12 .g-col-md-6 .col-lg-2}
 ```{=html}
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{tidyterra}</h5>
     <div align='center'><img src='https://dieghernan.github.io/tidyterra/logo.png' width='100px'align='center'></div>
     <p class="card-text">Paquete que te permite manipular datos raster.</p>
-    <a href="https://dieghernan.github.io/tidyterra/articles/tidyterra.html" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://dieghernan.github.io/tidyterra/articles/tidyterra.html" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 ```
 :::
 
-::: {.g-col-12 .g-col-md-4 .col-lg-4}
+::: {.g-col-12 .g-col-md-6 .col-lg-2}
 ```{=html}
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{cloudml}</h5>
     <div align='center'><img src='https://raw.githubusercontent.com/rstudio/cloudml/main/vignettes/images/cloudml.png' width='115px'align='center'></div>
     <p class="card-text">Paquete que te permite instalar y utilizar GCloud CLI.</p>
-    <a href="https://tensorflow.rstudio.com/reference/cloudml/" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://tensorflow.rstudio.com/reference/cloudml/" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 ```
 :::
 
-::: {.g-col-12 .g-col-md-4 .col-lg-4}
+::: {.g-col-12 .g-col-md-6 .col-lg-4}
 ```{=html}
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{rgee}</h5>
     <div align='center'><img src='https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png' width='100px'align='center'></div>
     <p class="card-text">Paquete que integrar Google Earth Engine con R.</p>
-    <a href="https://r-spatial.github.io/rgee/" class="btn btn-dark">Más información,clic aquí</a>
-  </div>
-</div>
-```
-:::
-::: {.g-col-12 .g-col-md-4 .col-lg-4}
-```{=html}
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{tmap}</h5>
-    <div align='center'><img src='https://user-images.githubusercontent.com/3457131/78889077-49661800-7a63-11ea-95b6-31db1ce6815c.png' width='100px'align='center'></div>
-    <p class="card-text">Paquete para generar mapas temáticos.</p>
-    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
-  </div>
-</div>
-```
-:::
-
-::: {.g-col-12 .g-col-md-4 .col-lg-4}
-```{=html}
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{gifski}</h5>
-    <div align='center'><img src='https://user-images.githubusercontent.com/23284899/258276611-89116f95-dd02-45c4-9ee5-c6df413f1484.png' width='100px'align='center'></div>
-    <p class="card-text">Paquete que te permite realizar gif de forma sencilla.</p>
-    <a href="#" class="btn btn-dark">Más información,clic aquí</a>
+    <center><a href="https://r-spatial.github.io/rgee/" class="btn btn-dark">Más información,clic aquí</a></center>
   </div>
 </div>
 ```
@@ -144,7 +120,7 @@ Este proceso solo se realizar una única vez, cuando ya tienes instalado y confi
 ```{r}
 #| eval: false
 # Lista de paquetes a instalar
-pkgs <- c("tidyverse", "tidyterra","remotes" ,"tmap", "gifski", "cloudml", "sf")
+pkgs <- c("tidyverse", "tidyterra","remotes","cloudml", "sf", "cptcity")
 # install.packages(pkgs = pkgs, dependencies = TRUE)
 # Se recomienda instalar la versión de GitHub de rgee
 
@@ -167,10 +143,9 @@ for (pkg in pkgs) {
 El paquete tidyverse está instalado y cargado correctamente.
 El paquete tidyterra está instalado y cargado correctamente.
 El paquete remotes está instalado y cargado correctamente.
-El paquete tmap está instalado y cargado correctamente.
-El paquete gifski está instalado y cargado correctamente.
 El paquete cloudml está instalado y cargado correctamente.
-El paquete sf está instalado y cargado correctamente
+El paquete sf está instalado y cargado correctamente.
+El paquete cptcity está instalado y cargado correctamente.
 ```
 El paquete de `rgee` actualmente presenta algunos incovenientes con la versión de CRAN, especialmente para los sistemas operativos de **Windows**, se recomienda instalar la versión de desarrollo la cual está alojada en GitHub. 
 Para su correcta instalación se recomienda seguir cualquiera de las siguientes alternativas mostradas 👇 

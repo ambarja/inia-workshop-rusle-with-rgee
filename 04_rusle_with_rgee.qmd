@@ -3,7 +3,6 @@
 En el siguente diagrama se muestra el flujo de trabajo para realizar el cálculo del mapa de erosión.
 
 ```{mermaid}
-
 flowchart TD
 A[Mapeo de erosión del suelo] 
 
@@ -32,28 +31,203 @@ M --> N[Erosión del suelo]
 
 ```
 
-## Factor K
+## Activación de librerías
 
 ```{r}
-#| eval: false
+#| warning: false
+library(rgee)
 library(sf)
 library(tidyverse)
 library(nngeo)
-ee_Initialize(user = "geografo.pe@gmail.com")
-
-peru_ee <- map_EP |> 
-    st_as_sf() |> 
-    summarise() |> 
-    st_remove_hole |>
-    sf_as_ee() |> 
-    Map$addLayer()
-
-# Factor K 
-# Par<- el cálculo del factor K se tomo encuenta el dataset actualizado de soilgrid v2.0 
-clay <- ee$Image("projects/soilgrids-isric/clay_mean")$multiply(10)
-sand <- ee$Image("projects/soilgrids-isric/sand_mean")$multiply(10)
-silt <- ee$Image("projects/soilgrids-isric/silt_mean")$multiply(10)
+library(mapsPERU)
+library(cptcity)
+ee_Initialize(user = 'barja.geografo@gmail.com')
 ```
 
+## Lectura del ámbito de estudio
+```{r}
+piura_ee <- map_DEP |>
+    filter(DEPARTAMENTO == 'Piura')  |>
+    st_as_sf() |>
+    sf_as_ee()
+Map$centerObject(piura_ee,zoom = 8)
+Map$addLayer(piura_ee)
+```
 
+## Factor R
 
+```{r}
+clim_rain <- ee$Image('OpenLandMap/CLM/CLM_PRECIPITATION_SM2RAIN_M/v01')
+year <- clim_rain$reduce(ee$Reducer$sum())
+r_monthly <- ee$Image(10)$pow(ee$Image(1.5)$
+   multiply(clim_rain$pow(2)$
+   divide(year)$log10()$
+   subtract(-0.08188)))$
+   multiply(1.735)
+factorR <- r_monthly$reduce(ee$Reducer$sum())
+```
+
+```{r}
+viz_factorR <- list(
+    palette = cpt(pal = 'ukmo_wow_humidity'),
+    min = 1.00,
+    max = 6000
+    )
+
+Map$addLayer(factorR$clip(piura_ee),viz_factorR) + 
+ Map$addLegend(viz_factorR, 'Factor R')
+```
+
+## Factor K
+```{r}
+# Factor K
+sand <- ee$Image("OpenLandMap/SOL/SOL_CLAY-WFRACTION_USDA-3A1A1A_M/v02")$
+    select("b0")$rename("sand")
+
+silt <- ee$Image("users/aschwantes/SLTPPT_I")$
+    divide(100)$rename("silt")
+
+clay <- ee$Image("OpenLandMap/SOL/SOL_SAND-WFRACTION_USDA-3A1A1A_M/v02")$
+    select("b0")$rename("clay")
+
+org <- ee$Image("OpenLandMap/SOL/SOL_ORGANIC-CARBON_USDA-6A1C_M/v02")$
+    select("b0")$rename("org")
+
+soil <- ee$Image(c(clay, sand, silt, org))$clip(piura_ee)
+```
+
+```{r}
+# Formula para calcular el factor acorde la eq. 
+fcsand <- soil$expression(
+  '0.2 + 0.3 * exp(-0.256 * sand * (1-(silt/100)))',
+  list(
+    'sand' = soil$select('sand'),
+    'silt' = soil$select('silt')
+  )
+)
+```
+
+```{r}
+fcl_si <- soil$expression(
+  '(silt/(clay + silt))**0.3',
+  list(
+    'silt' = soil$select('silt'),
+    'clay' = soil$select('clay')
+  )
+)
+```
+
+```{r}
+forg <- soil$expression(
+  '1 - ((0.25*org)/(org + exp(3.72-2.95*org)))',
+  list(
+    'org' = soil$select('org')
+  )
+)
+```
+
+```{r}
+fhyosand <- soil$expression(
+  '1-((0.7*(1 - sand/100))/((1 - sand/100) + exp(-5.51 + 22.9*(1 - sand/100))))',
+  list(
+    'sand' = soil$select('sand')
+  )
+)
+```
+
+```{r}
+factores <- ee$Image(c(fcsand, fcl_si, forg, fhyosand))$rename(c("fcsand", "fcl_si", "forg", "fhyosand"))
+factorK <- factores$expression(
+    "fcsand * fcl_si * forg * fhyosand",
+    list(
+        "fcsand" = factores$select("fcsand"),
+        "fcl_si" = factores$select("fcl_si"),
+        "forg" = factores$select("forg"),
+        "fhyosand" = factores$select("fhyosand")
+    )
+)
+```
+
+```{r}
+viz_factorK <- list(
+    palette = cpt(pal = "jjg_polarity_PuOr", n = 5),
+    min = 0.0,
+    max = 0.25
+)
+
+Map$addLayer(factorK$clip(piura_ee), viz_factorK) +
+    Map$addLegend(viz_factorK, "Factor K")
+```
+
+## Factor LS
+
+```{r}
+flow_acc <- ee$Image('WWF/HydroSHEDS/15ACC')$rename('flow_acc')
+dem <- ee$Image('WWF/HydroSHEDS/03CONDEM')
+slope <- ee$Terrain$slope(dem)$rename('slope')
+factores_para_ls <- ee$Image(c(flow_acc,slope))
+```
+```{r}
+factorLS <- factores_para_ls$expression(
+    '(0.4+1)*(flow_acc*463.83/22.13)**0.4*(slope/0.0896)**1.3',
+    list(
+       'slope' = factores_para_ls$select('slope'),
+       'flow_acc' = factores_para_ls$select('flow_acc')
+    )
+)
+```
+```{r}
+viz_factorLS <- list(
+    palette = cpt(pal = 'gist_earth',n = 5),
+    min = 0.0,
+    max = 3500
+    )
+
+Map$addLayer(factorLS$clip(piura_ee),viz_factorLS) + 
+ Map$addLegend(viz_factorLS,'Factor LS')
+```
+
+## Factor C
+
+```{r}
+ndvi_median <- ee$ImageCollection('MODIS/006/MOD13A2')$
+    median()$multiply(0.0001)$select('NDVI')
+factorC <- ee$Image(0.1)$multiply(ndvi_median)$multiply(-1)$add(1)$divide(2)       
+```
+
+```{r}
+viz_factorC <- list(
+    palette = cpt(pal = 'grass_ndvi'),
+    min = 0.46,
+    max = 0.49
+    )
+
+Map$addLayer(factorC$clip(piura_ee),viz_factorC) + 
+ Map$addLegend(viz_factorC, 'Factor C')
+```
+
+## Mapa de erosion
+
+```{r}
+erosion <- factorC$multiply(factorR)$multiply(factorLS)$multiply(factorK)
+
+viz_erosion <- list(
+    palette = cpt(pal = "grass_elevation", rev = TRUE),
+    min = 0.0,
+    max = 5000
+)
+
+Map$addLayer(erosion$clip(piura_ee), viz_erosion) +
+    Map$addLegend(viz_erosion, "Mapa de Erosion")
+```
+
+## Exportar raster final
+```{r}
+#| eval: false
+ee_as_raster(
+  erosion,
+  piura_ee,
+  scale = 1000,
+  "./mapa_erosion_piura.tif"
+  )
+```
